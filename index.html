@@ -267,12 +267,12 @@
             }
         });
 
-        Telegram.WebApp.onEvent("mainButtonClicked", function () {
+        Telegram.WebApp.offEvent("mainButtonClicked", function () {
             tg.sendData('wecwcwewcw');
         });
-        tg.onClick(function () {
-            tg.sendData('wecwcwewcw');
-        })
+        // tg.onClick(function () {
+        //     tg.sendData('wecwcwewcw');
+        // })
 
     </script>
 </body>
