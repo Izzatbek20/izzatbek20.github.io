@@ -17,9 +17,9 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         function setThemeClass() {
-            document.documentElement.className = Telegram.WebApp.colorScheme;
+            document.documentElement.className = tg.colorScheme;
         }
-        Telegram.WebApp.onEvent('themeChanged', setThemeClass);
+        tg.onEvent('themeChanged', setThemeClass);
         setThemeClass();
     </script>
     <style>
@@ -186,7 +186,7 @@
     </section> -->
 
     <script type="application/javascript">
-        Telegram.WebApp.ready();
+        let tg = window.tg.expand();
 
         let data = $('.item');
         var cart = {};
@@ -202,27 +202,27 @@
         var cartObj = JSON.parse(cartValue);
 
     
-        const initData = Telegram.WebApp.initData || '';
-        const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
+        const initData = tg.initData || '';
+        const initDataUnsafe = tg.initDataUnsafe || {};
     
         // document.querySelector('#greeting').innerHTML = `Hi, ${initDataUnsafe.user.first_name}!`;
         // document.querySelector('#initData').innerHTML = JSON.stringify(initData, null, 2);
         // document.querySelector('#initDataUnsafe').innerHTML = JSON.stringify(initDataUnsafe, null, 2);
-        // document.querySelector('#themeData').html(JSON.stringify(Telegram.WebApp.themeParams, null, 2));
+        // document.querySelector('#themeData').html(JSON.stringify(tg.themeParams, null, 2));
     
-        Telegram.WebApp.onEvent('themeChanged', function() {
-            document.querySelector('#themeData').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
+        tg.onEvent('themeChanged', function() {
+            document.querySelector('#themeData').innerHTML = JSON.stringify(tg.themeParams, null, 2);
         });
 
-        Telegram.WebApp.MainButton.text = "Savatga qo`shish";
+        tg.MainButton.text = "Savatga qo`shish";
 
         function MainButtonShow(el) {
-            const mainButton = Telegram.WebApp.MainButton;
+            const mainButton = tg.MainButton;
             mainButton.show();
         }
 
         function MainButtonHide(el) {
-            const mainButton = Telegram.WebApp.MainButton;
+            const mainButton = tg.MainButton;
             if (mainButton.isVisible) {
                 mainButton.hide();
             }
@@ -267,7 +267,7 @@
         });
 
         Telegram.WebApp.onEvent("mainButtonClicked", function(){
-            window.Telegram.WebApp.sendData('wecwcwewcw');
+            tg.sendData('wecwcwewcw');
         });
     
     </script>
