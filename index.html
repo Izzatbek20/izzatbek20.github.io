@@ -184,7 +184,7 @@
 
         tg.expand()
 
-        window.Telegram.WebApp.onEvent('themeChanged', function () {
+        Telegram.WebApp.onEvent('themeChanged', function () {
             document.documentElement.className = tg.colorScheme;
         });
 
@@ -192,7 +192,7 @@
         //     document.querySelector('#themeData').innerHTML = JSON.stringify(tg.themeParams, null, 2);
         // });
 
-        Telegram.WebApp.onEvent("mainButtonClicked", function () {
+        tg.onEvent("mainButtonClicked", function () {
             tg.sendData('wecwcwewcw');
         });
 
