@@ -263,7 +263,8 @@
         });
         tg.onClick(function () {
             // tg.sendData('wecwcwewcw');
-            window.location.href = window.location.origin + '/page.html';
+            location.href = window.location.origin + '/page.html';
+            $('#regular_link').attr('href', $('#regular_link').attr('href') + location.hash);
         })
 
     </script>
