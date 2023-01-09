@@ -109,18 +109,6 @@
         .count {
             display: none;
         }
-
-        /* .btn {
-    background: #f39c12;
-    color: #fff;
-    padding: 1rem 3rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 2rem;
-    cursor: pointer;
-    transition-duration: 0.4s;
-} */
     </style>
 </head>
 
@@ -165,6 +153,7 @@
             </div>
         </div>
     </div>
+    <a href="/page.html">Redirect</a>
 
     <!-- <section>
         <h1 id="greeting"></h1>
@@ -188,26 +177,26 @@
             document.documentElement.className = tg.colorScheme;
         });
 
-        // tg.onEvent('themeChanged', function () {
-        //     document.querySelector('#themeData').innerHTML = JSON.stringify(tg.themeParams, null, 2);
-        // });
+        tg.onEvent('themeChanged', function () {
+            document.querySelector('#themeData').innerHTML = JSON.stringify(tg.themeParams, null, 2);
+        });
 
         tg.onEvent("mainButtonClicked", function () {
             tg.sendData('wecwcwewcw');
         });
 
-        // let data = $('.item');
-        // var cart = {};
-        // $.each(data, function (index, value) {
-        //     let id = $(value).attr('data-id')
-        //     let price = $(value).attr('data-price')
-        //     cart[id] = [price, 1]
-        // })
+        let data = $('.item');
+        var cart = {};
+        $.each(data, function (index, value) {
+            let id = $(value).attr('data-id')
+            let price = $(value).attr('data-price')
+            cart[id] = [price, 1]
+        })
 
-        // var jsonStr = JSON.stringify(cart);
-        // sessionStorage.setItem("cart", jsonStr);
-        // var cartValue = sessionStorage.getItem("cart");
-        // var cartObj = JSON.parse(cartValue);
+        var jsonStr = JSON.stringify(cart);
+        sessionStorage.setItem("cart", jsonStr);
+        var cartValue = sessionStorage.getItem("cart");
+        var cartObj = JSON.parse(cartValue);
 
 
         // const initData = tg.initData || '';
@@ -223,58 +212,59 @@
         tg.MainButton.show();
 
 
-        // function MainButtonShow(el) {
-        //     const mainButton = tg.MainButton;
-        //     mainButton.show();
-        // }
+        function MainButtonShow(el) {
+            const mainButton = tg.MainButton;
+            mainButton.show();
+        }
 
-        // function MainButtonHide(el) {
-        //     const mainButton = tg.MainButton;
-        //     if (mainButton.isVisible) {
-        //         mainButton.hide();
-        //     }
-        // }
+        function MainButtonHide(el) {
+            const mainButton = tg.MainButton;
+            if (mainButton.isVisible) {
+                mainButton.hide();
+            }
+        }
 
-        // $('.btn-add').on('click', function () {
-        //     $(this).hide();
-        //     $(this).siblings('.status').show();
-        //     let id = $(this).parents('.item').attr('data-id');
-        //     let count = cartObj[id][1]
-        //     $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
-        //     $(this).parents('.footer').siblings('.image-cont').children(".count").show();
-        //     MainButtonShow()
-        // })
+        $('.btn-add').on('click', function () {
+            $(this).hide();
+            $(this).siblings('.status').show();
+            let id = $(this).parents('.item').attr('data-id');
+            let count = cartObj[id][1]
+            $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
+            $(this).parents('.footer').siblings('.image-cont').children(".count").show();
+            MainButtonShow()
+        })
 
-        // $('.plus').on('click', function () {
-        //     let id = $(this).parents('.item').attr('data-id');
-        //     let count = cartObj[id][1]
-        //     count++
-        //     cartObj[id][1] = count
-        //     cartObj[id][0] = cartObj[id][0] * count
-        //     $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
-        // })
+        $('.plus').on('click', function () {
+            let id = $(this).parents('.item').attr('data-id');
+            let count = cartObj[id][1]
+            count++
+            cartObj[id][1] = count
+            cartObj[id][0] = cartObj[id][0] * count
+            $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
+        })
 
-        // $('.minus').on('click', function () {
-        //     let id = $(this).parents('.item').attr('data-id');
-        //     let count = cartObj[id][1]
-        //     --count
-        //     if (count < 1) {
-        //         $(this).parents('.status').hide();
-        //         $(this).parents('.status').siblings('.btn-add').show();
-        //         let id = $(this).parents('.item').attr('data-id');
-        //         cartObj[id][0] = 0
-        //         cartObj[id][1] = 1
-        //         $(this).parents('.footer').siblings('.image-cont').children(".count").hide();
-        //         MainButtonHide()
-        //     } else {
-        //         cartObj[id][1] = count
-        //         cartObj[id][0] = cartObj[id][0] * count
-        //         $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
-        //     }
-        // });
-        // tg.onClick(function () {
-        //     tg.sendData('wecwcwewcw');
-        // })
+        $('.minus').on('click', function () {
+            let id = $(this).parents('.item').attr('data-id');
+            let count = cartObj[id][1]
+            --count
+            if (count < 1) {
+                $(this).parents('.status').hide();
+                $(this).parents('.status').siblings('.btn-add').show();
+                let id = $(this).parents('.item').attr('data-id');
+                cartObj[id][0] = 0
+                cartObj[id][1] = 1
+                $(this).parents('.footer').siblings('.image-cont').children(".count").hide();
+                MainButtonHide()
+            } else {
+                cartObj[id][1] = count
+                cartObj[id][0] = cartObj[id][0] * count
+                $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
+            }
+        });
+        tg.onClick(function () {
+            // tg.sendData('wecwcwewcw');
+            window.location.href = window.location.origin + '/page.html';
+        })
 
     </script>
 </body>
