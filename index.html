@@ -110,7 +110,6 @@
 
         #food {
             width: 100%;
-            background-color: red;
             height: 100vh;
         }
 
@@ -118,65 +117,50 @@
             display: none;
             width: 100%;
             height: 100vh;
-            background-color: blue;
-            font-family: var(--default-font);
-            background-color: var(--bg-color);
         }
 
-        .cafe-text-field-wrap {
-            margin-top: 14px;
+        .order-wrap-content {
+            width: 90%;
         }
 
-        .cafe-text-field {
-            font-family: var(--default-font);
-            font-size: 17px;
-            line-height: 21px;
-            font-weight: 500;
-            -webkit-font-smoothing: antialiased;
-            padding: 12px 20px 13px;
-            box-sizing: border-box;
-            display: block;
-            outline: none;
-            border: none;
-            border-radius: 0;
-            resize: none;
-            color: var(--text-color);
-            -webkit-user-select: auto;
-            user-select: auto;
-            cursor: auto;
+        .order-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .order-image {
+            width: 70px;
+        }
+
+        .order-content {
+            display: flex;
+            border-top: 1px solid #555;
+            padding: 8px;
+        }
+
+        .order-content>div {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        .order-content>span {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        }
+
+        .content-izoh {
+            margin-top: 20px;
+            padding: 8px;
+        }
+        .content-izoh > textarea{
+            margin-bottom: 10px;
             width: 100%;
-        }
-
-        .cafe-text-field::-webkit-input-placeholder {
-            transition: color var(--animation);
-            color: var(--placeholder-color);
-            text-overflow: ellipsis;
-        }
-
-        .cafe-text-field::-moz-placeholder {
-            transition: color var(--animation);
-            color: var(--placeholder-color);
-            text-overflow: ellipsis;
-        }
-
-        .cafe-text-field:-ms-input-placeholder {
-            transition: color var(--animation);
-            color: var(--placeholder-color);
-            text-overflow: ellipsis;
-        }
-
-        .cafe-text-field::placeholder {
-            text-overflow: ellipsis;
-        }
-
-        .cafe-text-field-hint {
-            font-family: var(--default-font);
-            font-size: 14px;
-            line-height: 18px;
-            font-weight: 500;
-            -webkit-font-smoothing: antialiased;
-            padding: 10px 20px 14px;
-            color: var(--hint-color);
         }
     </style>
 </head>
@@ -224,14 +208,55 @@
             </div>
         </section>
         <section id="orders">
-            <div class="cafe-text-field-wrap">
-                <textarea class="cafe-text-field js-order-comment-field cafe-block" rows="1"
-                    placeholder="Add comment…"></textarea>
-                <div class="cafe-text-field-hint">
-                    Any special requests, details, final wishes etc.
+            <div class="order-wrap-content">
+                <div class="order-title">
+                    <h1>Sizning mahsulotlaringiz</h1>
+                    <a href="#">Edit</a>
+                </div>
+                <div class="order-content">
+                    <div>
+                        <img class="order-image" src="./icon/hotdog.png" alt="Hotdog">
+                        <span class="order-text">
+                            <div>mahsulot-name 1x</div>
+                            <span>nima durlar</span>
+                        </span>
+                    </div>
+                    <span class="order-summa">
+                        <b>2.12 so`m</b>
+                    </span>
+                </div>
+                <div class="order-content">
+                    <div>
+                        <img class="order-image" src="./icon/hotdog.png" alt="Hotdog">
+                        <span class="order-text">
+                            <div>mahsulot-name 1x</div>
+                            <span>nima durlar</span>
+                        </span>
+                    </div>
+                    <span class="order-summa">
+                        <b>2.12 so`m</b>
+                    </span>
+                </div>
+                <div class="order-content">
+                    <div>
+                        <img class="order-image" src="./icon/hotdog.png" alt="Hotdog">
+                        <span class="order-text">
+                            <div>mahsulot-name 1x</div>
+                            <span>nima durlar</span>
+                        </span>
+                    </div>
+                    <span class="order-summa">
+                        <b>2.12 so`m</b>
+                    </span>
+                </div>
+
+                <div class="content-izoh">
+                    <textarea name="izoh" id="" cols="30" rows="2"></textarea>
+                    <div class="izoh">
+                        O`z izohingizni kiriting.
+                    </div>
                 </div>
             </div>
-
         </section>
     </div>
 
