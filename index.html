@@ -123,7 +123,7 @@
     </style>
 </head>
 
-<body>
+<body id="contentToglle" data-status="food">
     <div class="container">
         <section id="food">
             <div class="wrapper">
@@ -187,14 +187,21 @@
     </section> -->
 
     <script>
-        $('#sss').on('click', function () {
-            $('#food').hide('slow');
-            $('#orders').show('slow');
+        $('#contentToglle').on('click', function () {
+            let status = $(this).attr('data-status');
+            alert(status)
+            if (status == 'food') {
+                $('#food').slideUp();
+                $('#orders').slideDown();
+                $(this).attr('data-status', 'orders')
+            } else if (status == 'orders') {
+                $('#food').slideDown();
+                $('#orders').slideUp();
+                $(this).attr('data-status', 'food')
+
+            }
         })
-        $('#qwer').on('click', function () {
-            $('#orders').hide('slow');
-            $('#food').show('slow');
-        })
+
         let tg = window.Telegram.WebApp;
 
         tg.expand()
