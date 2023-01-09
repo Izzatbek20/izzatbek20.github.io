@@ -120,7 +120,7 @@
         }
 
         .order-wrap-content {
-            width: 90%;
+            width: 100%;
         }
 
         .order-title {
@@ -158,7 +158,8 @@
             margin-top: 20px;
             padding: 8px;
         }
-        .content-izoh > textarea{
+
+        .content-izoh>textarea {
             margin-bottom: 10px;
             width: 100%;
         }
@@ -274,23 +275,21 @@
     </section> -->
 
     <script>
-        $('#contentToglle').on('click', function () {
-            let status = $(this).attr('data-status');
-            if (status == 'food') {
-                $('#food').slideUp();
-                $('#orders').slideDown();
-                $(this).attr('data-status', 'orders')
-            } else if (status == 'orders') {
-                $('#food').slideDown();
-                $('#orders').slideUp();
-                $(this).attr('data-status', 'food')
-
-            }
-        })
-
         let tg = window.Telegram.WebApp;
 
         tg.expand()
+
+        // function mainButtonToggle() {
+        //     let status = $('body').attr('data-status');
+        //     if (status == 'food') {
+
+        //     } else if (status == 'orders') {
+        //         $('#food').slideDown();
+        //         $('#orders').slideUp();
+        //         $('body').attr('data-status', 'food')
+
+        //     }
+        // }
 
         Telegram.WebApp.onEvent('themeChanged', function () {
             document.documentElement.className = tg.colorScheme;
@@ -301,9 +300,10 @@
         });
 
         tg.onEvent("mainButtonClicked", function () {
-            // tg.sendData('wecwcwewcw');
-            $('#c').text('slmwkw');
-            alert('Hello!');
+            let status = $('body').attr('data-status');
+            $('#food').slideUp();
+            $('#orders').slideDown();
+            $('body').attr('data-status', 'orders')
         });
 
         let data = $('.item');
