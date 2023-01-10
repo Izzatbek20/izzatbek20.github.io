@@ -288,19 +288,15 @@
         });
 
         tg.onEvent("mainButtonClicked", function () {
-            // let status = $('body').attr('data-status');
             $('#food').slideUp();
             $('#orders').slideDown();
-            // $('body').attr('data-status', 'orders')
             tg.BackButton.show();
 
         });
 
         tg.onEvent("backButtonClicked", function () {
-            // let status = $('body').attr('data-status');
             $('#food').slideDown();
-                $('#orders').slideUp();
-                // $('body').attr('data-status', 'food')
+            $('#orders').slideUp();
             tg.BackButton.hide();
 
         });
@@ -328,9 +324,6 @@
         // document.querySelector('#themeData').html(JSON.stringify(tg.themeParams, null, 2));
 
         tg.MainButton.text = "Savatga qo`shish";
-
-        tg.MainButton.show();
-
 
         function MainButtonShow(el) {
             const mainButton = tg.MainButton;
@@ -381,9 +374,6 @@
                 $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
             }
         });
-        // tg.onClick(function () {
-        // })
-
     </script>
 </body>
 
