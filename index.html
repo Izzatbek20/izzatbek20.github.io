@@ -301,20 +301,20 @@
 
         // });
 
-        // tg.MainButton.text = "Savatga qo`shish";
-        // // tg.MainButton.showProgress(true);
+        tg.MainButton.text = "Savatga qo`shish";
+        // tg.MainButton.showProgress(true);
 
-        // function MainButtonShow(el) {
-        //     const mainButton = tg.MainButton;
-        //     mainButton.show();
-        // }
+        function MainButtonShow(el) {
+            const mainButton = tg.MainButton;
+            mainButton.show();
+        }
 
-        // function MainButtonHide(el) {
-        //     const mainButton = tg.MainButton;
-        //     if (mainButton.isVisible) {
-        //         mainButton.hide();
-        //     }
-        // }
+        function MainButtonHide(el) {
+            const mainButton = tg.MainButton;
+            if (mainButton.isVisible) {
+                mainButton.hide();
+            }
+        }
 
 
         // // const initData = tg.initData || '';
@@ -338,15 +338,15 @@
         // var cartValue = sessionStorage.getItem("cart");
         // var cartObj = JSON.parse(cartValue);
 
-        // $('.btn-add').on('click', function () {
-        //     $(this).hide();
-        //     $(this).siblings('.status').show();
-        //     let id = $(this).parents('.item').attr('data-id');
-        //     let count = cartObj[id][1]
-        //     $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
-        //     $(this).parents('.footer').siblings('.image-cont').children(".count").show();
-        //     MainButtonShow()
-        // })
+        $('.btn-add').on('click', function () {
+            $(this).hide();
+            $(this).siblings('.status').show();
+            let id = $(this).parents('.item').attr('data-id');
+            let count = cartObj[id][1]
+            $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
+            $(this).parents('.footer').siblings('.image-cont').children(".count").show();
+            MainButtonShow()
+        })
 
         // $('.plus').on('click', function () {
         //     let id = $(this).parents('.item').attr('data-id');
