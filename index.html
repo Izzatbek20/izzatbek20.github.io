@@ -110,13 +110,13 @@
 
         #food {
             width: 100%;
-            height: 100vh;
+            /* height: 100vh; */
         }
 
         #orders {
             display: none;
             width: 100%;
-            height: 100vh;
+            /* height: 100vh; */
         }
 
         .order-wrap-content {
@@ -290,14 +290,14 @@
         Telegram.WebApp.onEvent("mainButtonClicked", function () {
             $('#food').slideUp();
             $('#orders').slideDown();
-            // tg.BackButton.show();
+            tg.BackButton.show();
 
         });
 
         Telegram.WebApp.onEvent("backButtonClicked", function () {
             $('#food').slideDown();
             $('#orders').slideUp();
-            // tg.BackButton.hide();
+            tg.BackButton.hide();
 
         });
 
