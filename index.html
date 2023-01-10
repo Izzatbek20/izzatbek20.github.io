@@ -211,8 +211,8 @@
         <section id="orders">
             <div class="order-wrap-content">
                 <div class="order-title">
-                    <h1>Sizning mahsulotlaringiz</h1>
-                    <a href="#">Edit</a>
+                    <h1>Mahsulotlaringiz</h1>
+                    <a href="#" id="edit">Edit</a>
                 </div>
                 <div class="order-content">
                     <div>
@@ -283,23 +283,47 @@
             document.documentElement.className = tg.colorScheme;
         });
 
-        tg.onEvent('themeChanged', function () {
-            document.querySelector('#themeData').innerHTML = JSON.stringify(tg.themeParams, null, 2);
-        });
+        // Telegram.WebApp.onEvent('themeChanged', function () {
+        //     document.querySelector('#themeData').innerHTML = JSON.stringify(tg.themeParams, null, 2);
+        // });
 
-        tg.onEvent("mainButtonClicked", function () {
+        Telegram.WebApp.onEvent("mainButtonClicked", function () {
             $('#food').slideUp();
             $('#orders').slideDown();
             tg.BackButton.show();
 
         });
 
-        tg.onEvent("backButtonClicked", function () {
+        Telegram.WebApp.onEvent("backButtonClicked", function () {
             $('#food').slideDown();
             $('#orders').slideUp();
             tg.BackButton.hide();
 
         });
+
+        tg.MainButton.text = "Savatga qo`shish";
+        tg.MainButton.showProgress(true);
+
+        function MainButtonShow(el) {
+            const mainButton = tg.MainButton;
+            mainButton.show();
+        }
+
+        function MainButtonHide(el) {
+            const mainButton = tg.MainButton;
+            if (mainButton.isVisible) {
+                mainButton.hide();
+            }
+        }
+
+
+        // const initData = tg.initData || '';
+        // const initDataUnsafe = tg.initDataUnsafe || {};
+
+        // document.querySelector('#greeting').innerHTML = `Hi, ${initDataUnsafe.user.first_name}!`;
+        // document.querySelector('#initData').innerHTML = JSON.stringify(initData, null, 2);
+        // document.querySelector('#initDataUnsafe').innerHTML = JSON.stringify(initDataUnsafe, null, 2);
+        // document.querySelector('#themeData').html(JSON.stringify(tg.themeParams, null, 2));
 
         let data = $('.item');
         var cart = {};
@@ -313,29 +337,6 @@
         sessionStorage.setItem("cart", jsonStr);
         var cartValue = sessionStorage.getItem("cart");
         var cartObj = JSON.parse(cartValue);
-
-
-        // const initData = tg.initData || '';
-        // const initDataUnsafe = tg.initDataUnsafe || {};
-
-        // document.querySelector('#greeting').innerHTML = `Hi, ${initDataUnsafe.user.first_name}!`;
-        // document.querySelector('#initData').innerHTML = JSON.stringify(initData, null, 2);
-        // document.querySelector('#initDataUnsafe').innerHTML = JSON.stringify(initDataUnsafe, null, 2);
-        // document.querySelector('#themeData').html(JSON.stringify(tg.themeParams, null, 2));
-
-        tg.MainButton.text = "Savatga qo`shish";
-
-        function MainButtonShow(el) {
-            const mainButton = tg.MainButton;
-            mainButton.show();
-        }
-
-        function MainButtonHide(el) {
-            const mainButton = tg.MainButton;
-            if (mainButton.isVisible) {
-                mainButton.hide();
-            }
-        }
 
         $('.btn-add').on('click', function () {
             $(this).hide();
@@ -374,6 +375,12 @@
                 $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
             }
         });
+
+        $('#edit').on('click', function () {
+            $('#food').slideDown();
+            $('#orders').slideUp();
+            tg.BackButton.hide();
+        })
     </script>
 </body>
 
