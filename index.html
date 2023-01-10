@@ -279,42 +279,42 @@
 
         tg.expand()
 
-        // Telegram.WebApp.onEvent('themeChanged', function () {
-        //     document.documentElement.className = tg.colorScheme;
-        // });
+        Telegram.WebApp.onEvent('themeChanged', function () {
+            document.documentElement.className = tg.colorScheme;
+        });
 
-        // Telegram.WebApp.onEvent('themeChanged', function () {
-        //     document.querySelector('#themeData').innerHTML = JSON.stringify(tg.themeParams, null, 2);
-        // });
+        Telegram.WebApp.onEvent('themeChanged', function () {
+            document.querySelector('#themeData').innerHTML = JSON.stringify(tg.themeParams, null, 2);
+        });
 
-        // Telegram.WebApp.onEvent("mainButtonClicked", function () {
-        //     $('#food').slideUp();
-        //     $('#orders').slideDown();
-        //     tg.BackButton.show();
+        Telegram.WebApp.onEvent("mainButtonClicked", function () {
+            $('#food').slideUp();
+            $('#orders').slideDown();
+            tg.BackButton.show();
 
-        // });
+        });
 
-        // Telegram.WebApp.onEvent("backButtonClicked", function () {
-        //     $('#food').slideDown();
-        //     $('#orders').slideUp();
-        //     tg.BackButton.hide();
+        Telegram.WebApp.onEvent("backButtonClicked", function () {
+            $('#food').slideDown();
+            $('#orders').slideUp();
+            tg.BackButton.hide();
 
-        // });
+        });
 
-        // tg.MainButton.text = "Savatga qo`shish";
-        // // tg.MainButton.showProgress(true);
+        tg.MainButton.text = "Savatga qo`shish";
+        // tg.MainButton.showProgress(true);
 
-        // function MainButtonShow(el) {
-        //     const mainButton = tg.MainButton;
-        //     mainButton.show();
-        // }
+        function MainButtonShow(el) {
+            const mainButton = tg.MainButton;
+            mainButton.show();
+        }
 
-        // function MainButtonHide(el) {
-        //     const mainButton = tg.MainButton;
-        //     if (mainButton.isVisible) {
-        //         mainButton.hide();
-        //     }
-        // }
+        function MainButtonHide(el) {
+            const mainButton = tg.MainButton;
+            if (mainButton.isVisible) {
+                mainButton.hide();
+            }
+        }
 
 
         // // const initData = tg.initData || '';
