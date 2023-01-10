@@ -290,19 +290,19 @@
         Telegram.WebApp.onEvent("mainButtonClicked", function () {
             $('#food').slideUp();
             $('#orders').slideDown();
-            tg.BackButton.show();
+            // tg.BackButton.show();
 
         });
 
         Telegram.WebApp.onEvent("backButtonClicked", function () {
             $('#food').slideDown();
             $('#orders').slideUp();
-            tg.BackButton.hide();
+            // tg.BackButton.hide();
 
         });
 
         tg.MainButton.text = "Savatga qo`shish";
-        tg.MainButton.showProgress(true);
+        // tg.MainButton.showProgress(true);
 
         function MainButtonShow(el) {
             const mainButton = tg.MainButton;
