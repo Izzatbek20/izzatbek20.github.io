@@ -279,20 +279,20 @@
 
         tg.expand()
 
-        // Telegram.WebApp.onEvent('themeChanged', function () {
-        //     document.documentElement.className = tg.colorScheme;
-        // });
+        Telegram.WebApp.onEvent('themeChanged', function () {
+            document.documentElement.className = tg.colorScheme;
+        });
 
-        // // Telegram.WebApp.onEvent('themeChanged', function () {
-        // //     document.querySelector('#themeData').innerHTML = JSON.stringify(tg.themeParams, null, 2);
-        // // });
+        Telegram.WebApp.onEvent('themeChanged', function () {
+            document.querySelector('#themeData').innerHTML = JSON.stringify(tg.themeParams, null, 2);
+        });
 
-        // Telegram.WebApp.onEvent("mainButtonClicked", function () {
-        //     $('#food').slideUp();
-        //     $('#orders').slideDown();
-        //     tg.BackButton.show();
+        Telegram.WebApp.onEvent("mainButtonClicked", function () {
+            $('#food').slideUp();
+            $('#orders').slideDown();
+            tg.BackButton.show();
 
-        // });
+        });
 
         // Telegram.WebApp.onEvent("backButtonClicked", function () {
         //     $('#food').slideDown();
