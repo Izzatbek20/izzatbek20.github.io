@@ -110,13 +110,13 @@
 
         #food {
             width: 100%;
-            /* height: 100vh; */
+            height: 100vh;
         }
 
         #orders {
             display: none;
             width: 100%;
-            /* height: 100vh; */
+            height: 100vh;
         }
 
         .order-wrap-content {
@@ -275,112 +275,112 @@
     </section> -->
 
     <script>
-        let tg = window.Telegram.WebApp;
+        // let tg = window.Telegram.WebApp;
 
-        tg.expand()
-
-        Telegram.WebApp.onEvent('themeChanged', function () {
-            document.documentElement.className = tg.colorScheme;
-        });
+        // tg.expand()
 
         // Telegram.WebApp.onEvent('themeChanged', function () {
-        //     document.querySelector('#themeData').innerHTML = JSON.stringify(tg.themeParams, null, 2);
+        //     document.documentElement.className = tg.colorScheme;
         // });
 
-        Telegram.WebApp.onEvent("mainButtonClicked", function () {
-            $('#food').slideUp();
-            $('#orders').slideDown();
-            tg.BackButton.show();
+        // // Telegram.WebApp.onEvent('themeChanged', function () {
+        // //     document.querySelector('#themeData').innerHTML = JSON.stringify(tg.themeParams, null, 2);
+        // // });
 
-        });
+        // Telegram.WebApp.onEvent("mainButtonClicked", function () {
+        //     $('#food').slideUp();
+        //     $('#orders').slideDown();
+        //     tg.BackButton.show();
 
-        Telegram.WebApp.onEvent("backButtonClicked", function () {
-            $('#food').slideDown();
-            $('#orders').slideUp();
-            tg.BackButton.hide();
+        // });
 
-        });
+        // Telegram.WebApp.onEvent("backButtonClicked", function () {
+        //     $('#food').slideDown();
+        //     $('#orders').slideUp();
+        //     tg.BackButton.hide();
 
-        tg.MainButton.text = "Savatga qo`shish";
-        // tg.MainButton.showProgress(true);
+        // });
 
-        function MainButtonShow(el) {
-            const mainButton = tg.MainButton;
-            mainButton.show();
-        }
+        // tg.MainButton.text = "Savatga qo`shish";
+        // // tg.MainButton.showProgress(true);
 
-        function MainButtonHide(el) {
-            const mainButton = tg.MainButton;
-            if (mainButton.isVisible) {
-                mainButton.hide();
-            }
-        }
+        // function MainButtonShow(el) {
+        //     const mainButton = tg.MainButton;
+        //     mainButton.show();
+        // }
+
+        // function MainButtonHide(el) {
+        //     const mainButton = tg.MainButton;
+        //     if (mainButton.isVisible) {
+        //         mainButton.hide();
+        //     }
+        // }
 
 
-        // const initData = tg.initData || '';
-        // const initDataUnsafe = tg.initDataUnsafe || {};
+        // // const initData = tg.initData || '';
+        // // const initDataUnsafe = tg.initDataUnsafe || {};
 
-        // document.querySelector('#greeting').innerHTML = `Hi, ${initDataUnsafe.user.first_name}!`;
-        // document.querySelector('#initData').innerHTML = JSON.stringify(initData, null, 2);
-        // document.querySelector('#initDataUnsafe').innerHTML = JSON.stringify(initDataUnsafe, null, 2);
-        // document.querySelector('#themeData').html(JSON.stringify(tg.themeParams, null, 2));
+        // // document.querySelector('#greeting').innerHTML = `Hi, ${initDataUnsafe.user.first_name}!`;
+        // // document.querySelector('#initData').innerHTML = JSON.stringify(initData, null, 2);
+        // // document.querySelector('#initDataUnsafe').innerHTML = JSON.stringify(initDataUnsafe, null, 2);
+        // // document.querySelector('#themeData').html(JSON.stringify(tg.themeParams, null, 2));
 
-        let data = $('.item');
-        var cart = {};
-        $.each(data, function (index, value) {
-            let id = $(value).attr('data-id')
-            let price = $(value).attr('data-price')
-            cart[id] = [price, 1]
-        })
+        // let data = $('.item');
+        // var cart = {};
+        // $.each(data, function (index, value) {
+        //     let id = $(value).attr('data-id')
+        //     let price = $(value).attr('data-price')
+        //     cart[id] = [price, 1]
+        // })
 
-        var jsonStr = JSON.stringify(cart);
-        sessionStorage.setItem("cart", jsonStr);
-        var cartValue = sessionStorage.getItem("cart");
-        var cartObj = JSON.parse(cartValue);
+        // var jsonStr = JSON.stringify(cart);
+        // sessionStorage.setItem("cart", jsonStr);
+        // var cartValue = sessionStorage.getItem("cart");
+        // var cartObj = JSON.parse(cartValue);
 
-        $('.btn-add').on('click', function () {
-            $(this).hide();
-            $(this).siblings('.status').show();
-            let id = $(this).parents('.item').attr('data-id');
-            let count = cartObj[id][1]
-            $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
-            $(this).parents('.footer').siblings('.image-cont').children(".count").show();
-            MainButtonShow()
-        })
+        // $('.btn-add').on('click', function () {
+        //     $(this).hide();
+        //     $(this).siblings('.status').show();
+        //     let id = $(this).parents('.item').attr('data-id');
+        //     let count = cartObj[id][1]
+        //     $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
+        //     $(this).parents('.footer').siblings('.image-cont').children(".count").show();
+        //     MainButtonShow()
+        // })
 
-        $('.plus').on('click', function () {
-            let id = $(this).parents('.item').attr('data-id');
-            let count = cartObj[id][1]
-            count++
-            cartObj[id][1] = count
-            cartObj[id][0] = cartObj[id][0] * count
-            $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
-        })
+        // $('.plus').on('click', function () {
+        //     let id = $(this).parents('.item').attr('data-id');
+        //     let count = cartObj[id][1]
+        //     count++
+        //     cartObj[id][1] = count
+        //     cartObj[id][0] = cartObj[id][0] * count
+        //     $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
+        // })
 
-        $('.minus').on('click', function () {
-            let id = $(this).parents('.item').attr('data-id');
-            let count = cartObj[id][1]
-            --count
-            if (count < 1) {
-                $(this).parents('.status').hide();
-                $(this).parents('.status').siblings('.btn-add').show();
-                let id = $(this).parents('.item').attr('data-id');
-                cartObj[id][0] = 0
-                cartObj[id][1] = 1
-                $(this).parents('.footer').siblings('.image-cont').children(".count").hide();
-                MainButtonHide()
-            } else {
-                cartObj[id][1] = count
-                cartObj[id][0] = cartObj[id][0] * count
-                $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
-            }
-        });
+        // $('.minus').on('click', function () {
+        //     let id = $(this).parents('.item').attr('data-id');
+        //     let count = cartObj[id][1]
+        //     --count
+        //     if (count < 1) {
+        //         $(this).parents('.status').hide();
+        //         $(this).parents('.status').siblings('.btn-add').show();
+        //         let id = $(this).parents('.item').attr('data-id');
+        //         cartObj[id][0] = 0
+        //         cartObj[id][1] = 1
+        //         $(this).parents('.footer').siblings('.image-cont').children(".count").hide();
+        //         MainButtonHide()
+        //     } else {
+        //         cartObj[id][1] = count
+        //         cartObj[id][0] = cartObj[id][0] * count
+        //         $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
+        //     }
+        // });
 
-        $('#edit').on('click', function () {
-            $('#food').slideDown();
-            $('#orders').slideUp();
-            tg.BackButton.hide();
-        })
+        // $('#edit').on('click', function () {
+        //     $('#food').slideDown();
+        //     $('#orders').slideUp();
+        //     tg.BackButton.hide();
+        // })
     </script>
 </body>
 
