@@ -279,18 +279,6 @@
 
         tg.expand()
 
-        // function mainButtonToggle() {
-        //     let status = $('body').attr('data-status');
-        //     if (status == 'food') {
-
-        //     } else if (status == 'orders') {
-        //         $('#food').slideDown();
-        //         $('#orders').slideUp();
-        //         $('body').attr('data-status', 'food')
-
-        //     }
-        // }
-
         Telegram.WebApp.onEvent('themeChanged', function () {
             document.documentElement.className = tg.colorScheme;
         });
@@ -300,10 +288,21 @@
         });
 
         tg.onEvent("mainButtonClicked", function () {
-            let status = $('body').attr('data-status');
+            // let status = $('body').attr('data-status');
             $('#food').slideUp();
             $('#orders').slideDown();
-            $('body').attr('data-status', 'orders')
+            // $('body').attr('data-status', 'orders')
+            tg.BackButton.show();
+
+        });
+
+        tg.onEvent("backButtonClicked", function () {
+            // let status = $('body').attr('data-status');
+            $('#food').slideDown();
+                $('#orders').slideUp();
+                // $('body').attr('data-status', 'food')
+            tg.BackButton.hide();
+
         });
 
         let data = $('.item');
