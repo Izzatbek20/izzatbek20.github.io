@@ -163,9 +163,8 @@
             const from_arr = from.innerText.split(':')
 
             const new_date = new Date()
-            // const old_date = new Date(new_date.getFullYear(), new_date.getMonth(), new_date.getDay(), from_arr[0], from_arr[1])
-            const old_date = new Date(new_date.getFullYear(), new_date.getMonth(), new_date.getDay(), from_arr[0], 45)
-
+            const old_date = new Date(new_date.getFullYear(), new_date.getMonth(), new_date.getDay(), from_arr[0], from_arr[1])
+            
             // Vaqt oraligini minutga o'tkazib olamiz
             const new_date_minut = (new_date.getHours() * 60) + new_date.getMinutes()
             const old_date_minut = (old_date.getHours() * 60) + old_date.getMinutes()
