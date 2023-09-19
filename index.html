@@ -2,385 +2,208 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="MobileOptimized" content="176" />
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="robots" content="noindex,nofollow" />
-    <title>Fast Food</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: sans-serif;
-            background-color: var(--tg-theme-bg-color, #ffffff);
-            color: var(--tg-theme-text-color, #222222);
-            font-size: 16px;
-            margin: 0;
-            padding: 0;
-            color-scheme: var(--tg-color-scheme);
-        }
-
-        /* a {
-            color: var(--tg-theme-link-color, #2678b6);
-        } */
-
-        .container {
-            width: 100%;
-            justify-content: center;
-        }
-
-        .wrapper {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 50px 10px;
-            grid-auto-rows: minmax(50px, auto);
-            width: 90%;
-        }
-
-        .image-cont {
-            position: relative;
-        }
-
-        .count {
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-
-        .wrapper>.item {
-            position: relative;
-            list-style-type: none;
-        }
-
-        .food-image {
-            margin: auto;
-            width: 120px;
-        }
-
-        .bottom,
-        .footer {
-            text-align: center;
-            width: 100%;
-            display: block;
-        }
-
-        .title {
-            color: var(--tg-theme-link-color, #222222);
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .btn-add {
-            margin: auto;
-            width: 80%;
-        }
-
-        .row-btn {
-            width: 80%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: auto;
-        }
-
-        .status {
-            display: none;
-        }
-
-        .minus,
-        .plus {
-            flex: 1;
-        }
-
-        .count {
-            display: none;
-        }
-
-        #food {
-            width: 100%;
-            height: 100vh;
-        }
-
-        #orders {
-            display: none;
-            width: 100%;
-            height: 100vh;
-        }
-
-        .order-wrap-content {
-            width: 100%;
-        }
-
-        .order-title {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-        }
-
-        .order-image {
-            width: 70px;
-        }
-
-        .order-content {
-            display: flex;
-            border-top: 1px solid #555;
-            padding: 8px;
-        }
-
-        .order-content>div {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: start;
-        }
-
-        .order-content>span {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: end;
-        }
-
-        .content-izoh {
-            margin-top: 20px;
-            padding: 8px;
-        }
-
-        .content-izoh>textarea {
-            margin-bottom: 10px;
-            width: 100%;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops</title>
 </head>
 
-<body id="contentToglle" data-status="food">
-    <div class="container">
-        <section id="food">
-            <div class="wrapper">
-                <div class="item" data-id="1" data-price="15">
-                    <div class="image-cont">
-                        <div class="count">1</div>
-                        <img class="food-image" src="./icon/hotdog.png" alt="Hotdog">
-                    </div>
-                    <div class="bottom">
-                        <span class="title">icon 1</span>
-                    </div>
-                    <div class="footer">
-                        <button class="btn-add">Add</button>
-                        <div class="status">
-                            <div class="row-btn">
-                                <button class="minus">-</button>
-                                <button class="plus">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item" data-id="2" data-price="10">
-                    <div class="image-cont">
-                        <div class="count">1</div>
-                        <img class="food-image" src="./icon/hotdog.png" alt="Hotdog">
-                    </div>
-                    <div class="bottom">
-                        <span class="title">icon 1</span>
-                    </div>
-                    <div class="footer">
-                        <button class="btn-add">Add</button>
-                        <div class="status">
-                            <div class="row-btn">
-                                <button class="minus">-</button>
-                                <button class="plus">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="orders">
-            <div class="order-wrap-content">
-                <div class="order-title">
-                    <h1>Mahsulotlaringiz</h1>
-                    <a href="#" id="edit">Edit</a>
-                </div>
-                <div class="order-content">
-                    <div>
-                        <img class="order-image" src="./icon/hotdog.png" alt="Hotdog">
-                        <span class="order-text">
-                            <div>mahsulot-name 1x</div>
-                            <span>nima durlar</span>
-                        </span>
-                    </div>
-                    <span class="order-summa">
-                        <b>2.12 so`m</b>
-                    </span>
-                </div>
-                <div class="order-content">
-                    <div>
-                        <img class="order-image" src="./icon/hotdog.png" alt="Hotdog">
-                        <span class="order-text">
-                            <div>mahsulot-name 1x</div>
-                            <span>nima durlar</span>
-                        </span>
-                    </div>
-                    <span class="order-summa">
-                        <b>2.12 so`m</b>
-                    </span>
-                </div>
-                <div class="order-content">
-                    <div>
-                        <img class="order-image" src="./icon/hotdog.png" alt="Hotdog">
-                        <span class="order-text">
-                            <div>mahsulot-name 1x</div>
-                            <span>nima durlar</span>
-                        </span>
-                    </div>
-                    <span class="order-summa">
-                        <b>2.12 so`m</b>
-                    </span>
-                </div>
-
-                <div class="content-izoh">
-                    <textarea name="izoh" id="" cols="30" rows="2"></textarea>
-                    <div class="izoh">
-                        O`z izohingizni kiriting.
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- <section>
-        <h1 id="greeting"></h1>
-
-        <div id="buttons">
-            <button onclick="toggleMainButton(this);">Hide Main Button</button>
-        </div>
-
-        <h3>Init Data: </h3>
-        <pre id="initData"></pre>
-        <h3>Init Data (unsafe): </h3>
-        <pre id="initDataUnsafe"></pre>
-    </section> -->
+<body>
+    <input type="number" step="any" id="summa">
+    <table border="1" padding="1px">
+        <thead>
+            <th>№</th>
+            <th>Boshlangan vaqt</th>
+            <th>Tugagan vaqt</th>
+            <th>Minut</th>
+            <th>Summa</th>
+            <th>Ammalar</th>
+        </thead>
+        <tbody id="table">
+            <tr>
+                <td>1</td>
+                <td class="from"></td>
+                <td class="to"></td>
+                <td class="minut"></td>
+                <td class="summa"></td>
+                <td>
+                    <button class="boshlash" onclick="boshlash(this, 1)">Boshlash</button>
+                    <button class="tugatish" disabled onclick="tugatish(this, 1)">Tugatish</button>
+                    <button class="ochirish" onclick="ochirish(this, 1)">Tozalash</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="from"></td>
+                <td class="to"></td>
+                <td class="minut"></td>
+                <td class="summa"></td>
+                <td>
+                    <button class="boshlash" onclick="boshlash(this, 2)">Boshlash</button>
+                    <button class="tugatish" disabled onclick="tugatish(this, 2)">Tugatish</button>
+                    <button class="ochirish" onclick="ochirish(this, 2)">Tozalash</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="from"></td>
+                <td class="to"></td>
+                <td class="minut"></td>
+                <td class="summa"></td>
+                <td>
+                    <button class="boshlash" onclick="boshlash(this,3)">Boshlash</button>
+                    <button class="tugatish" disabled onclick="tugatish(this,3)">Tugatish</button>
+                    <button class="ochirish" onclick="ochirish(this,3)">Tozalash</button>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="from"></td>
+                <td class="to"></td>
+                <td class="minut"></td>
+                <td class="summa"></td>
+                <td>
+                    <button class="boshlash" onclick="boshlash(this,4)">Boshlash</button>
+                    <button class="tugatish" disabled onclick="tugatish(this,4)">Tugatish</button>
+                    <button class="ochirish" onclick="ochirish(this,4)">Tozalash</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
     <script>
-        let tg = window.Telegram.WebApp;
+        // Localstorage
+        const loc = localStorage
+        // Tablening body qismi
+        const table_body = document.getElementById('table');
+        // Yuqoridegi oldindan belgilab qo'yiladigan summa
+        const narx = document.getElementById('summa');
 
-        tg.expand()
+        // Tugamalar
+        const boshlash_btns = document.querySelectorAll('.boshlash');
+        const tugatish_btns = document.querySelectorAll('.tugatish');
+        const ochirish_btns = document.querySelectorAll('.ochirish');
 
-        Telegram.WebApp.onEvent('themeChanged', function () {
-            document.documentElement.className = tg.colorScheme;
-        });
+        window.addEventListener('load', () => {
+            const table_tr = table_body.children
+            for (let index = 0; index < table_tr.length; index++) {
+                const element = table_tr[index].children;
+                for (let index_in = 0; index_in < element.length; index_in++) {
+                    const element_in = element[index_in];
+                    const loc_data = loc.getItem("row" + (index + 1))
+                    if (loc_data) {
+                        const data_json = JSON.parse(loc_data)
+                        if (element_in.className) {
+                            if (data_json.from) {
+                                element_in.innerText = data_json[element_in.className]
+                            }
+                        }
+                        if (index_in == 5) {
+                            const amallar_btn = element_in.children
+                            if (data_json.btn) {
+                                if (!data_json.btn.boshlash) {
+                                    amallar_btn[0].setAttribute('disabled', "")
+                                } else {
+                                    amallar_btn[0].removeAttribute('disabled')
+                                }
+                                if (!data_json.btn.tugatish) {
+                                    amallar_btn[1].setAttribute('disabled', "")
+                                } else {
+                                    amallar_btn[1].removeAttribute('disabled')
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
-        Telegram.WebApp.onEvent('themeChanged', function () {
-            document.querySelector('#themeData').innerHTML = JSON.stringify(tg.themeParams, null, 2);
-        });
+            narx.value = loc.getItem('narx')
+        })
 
-        Telegram.WebApp.onEvent("mainButtonClicked", function () {
-            $('#food').slideUp();
-            $('#orders').slideDown();
-            tg.BackButton.show();
+        narx.addEventListener('change', element => {
+            loc.setItem('narx', element.target.value)
+        })
 
-        });
+        // Sanoqni boshlash
+        function boshlash(element, nomer) {
+            const date = new Date()
 
-        Telegram.WebApp.onEvent("backButtonClicked", function () {
-            $('#food').slideDown();
-            $('#orders').slideUp();
-            tg.BackButton.hide();
+            const ammalar = element.parentElement
+            const summa = ammalar.previousElementSibling
+            const minut = summa.previousElementSibling
+            const to = minut.previousElementSibling
+            const from = to.previousElementSibling
 
-        });
+            from.innerHTML = date.getHours() + " : " + date.getMinutes()
 
-        tg.MainButton.text = "Savatga qo`shish";
-        // tg.MainButton.showProgress(true);
+            element.setAttribute('disabled', "")
+            element.nextElementSibling.removeAttribute('disabled')
 
-        function MainButtonShow(el) {
-            const mainButton = tg.MainButton;
-            mainButton.show();
+            // Localstoragega ma'lumot yozish
+            loc.setItem('row' + nomer, JSON.stringify({
+                'from': from.innerText,
+                'to': to.innerText,
+                'minut': minut.innerText,
+                'summa': summa.innerText,
+                'btn': {
+                    'boshlash': false,
+                    'tugatish': true,
+                }
+            }))
         }
 
-        function MainButtonHide(el) {
-            const mainButton = tg.MainButton;
-            if (mainButton.isVisible) {
-                mainButton.hide();
-            }
+        // Sanoqni tugatish
+        function tugatish(element, nomer) {
+
+            const ammalar = element.parentElement
+            const summa = ammalar.previousElementSibling
+            const minut = summa.previousElementSibling
+            const to = minut.previousElementSibling
+            const from = to.previousElementSibling
+
+            const from_arr = from.innerText.split(':')
+
+            const new_date = new Date()
+            // const old_date = new Date(new_date.getFullYear(), new_date.getMonth(), new_date.getDay(), from_arr[0], from_arr[1])
+            const old_date = new Date(new_date.getFullYear(), new_date.getMonth(), new_date.getDay(), from_arr[0], 45)
+
+            // Vaqt oraligini minutga o'tkazib olamiz
+            const new_date_minut = (new_date.getHours() * 60) + new_date.getMinutes()
+            const old_date_minut = (old_date.getHours() * 60) + old_date.getMinutes()
+            const oraliq_minut = Math.abs(new_date_minut - old_date_minut)
+            const sum = oraliq_minut * narx.value
+
+            to.innerText = new_date.getHours() + " : " + new_date.getMinutes()
+            minut.innerText = oraliq_minut
+            summa.innerText = `${sum.toLocaleString('es-US')} so'm`
+
+            element.setAttribute('disabled', "")
+
+            // Localstoragega ma'lumot yozish
+            loc.setItem('row' + nomer, JSON.stringify({
+                'from': from.innerText,
+                'to': to.innerText,
+                'minut': minut.innerText,
+                'summa': summa.innerText,
+                'btn': {
+                    'boshlash': false,
+                    'tugatish': false,
+                }
+            }))
         }
 
-
-        // // const initData = tg.initData || '';
-        // // const initDataUnsafe = tg.initDataUnsafe || {};
-
-        // // document.querySelector('#greeting').innerHTML = `Hi, ${initDataUnsafe.user.first_name}!`;
-        // // document.querySelector('#initData').innerHTML = JSON.stringify(initData, null, 2);
-        // // document.querySelector('#initDataUnsafe').innerHTML = JSON.stringify(initDataUnsafe, null, 2);
-        // // document.querySelector('#themeData').html(JSON.stringify(tg.themeParams, null, 2));
-
-        let data = $('.item');
-        var cart = {};
-        $.each(data, function (index, value) {
-            let id = $(value).attr('data-id')
-            let price = $(value).attr('data-price')
-            cart[id] = [price, 1]
-        })
-
-        var jsonStr = JSON.stringify(cart);
-        sessionStorage.setItem("cart", jsonStr);
-        var cartValue = sessionStorage.getItem("cart");
-        var cartObj = JSON.parse(cartValue);
-
-        $('.btn-add').on('click', function () {
-            $(this).hide();
-            $(this).siblings('.status').show();
-            let id = $(this).parents('.item').attr('data-id');
-            let count = cartObj[id][1]
-            $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
-            $(this).parents('.footer').siblings('.image-cont').children(".count").show();
-            MainButtonShow()
-        })
-
-        $('.plus').on('click', function () {
-            let id = $(this).parents('.item').attr('data-id');
-            let count = cartObj[id][1]
-            count++
-            cartObj[id][1] = count
-            cartObj[id][0] = cartObj[id][0] * count
-            $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
-        })
-
-        $('.minus').on('click', function () {
-            let id = $(this).parents('.item').attr('data-id');
-            let count = cartObj[id][1]
-            --count
-            if (count < 1) {
-                $(this).parents('.status').hide();
-                $(this).parents('.status').siblings('.btn-add').show();
-                let id = $(this).parents('.item').attr('data-id');
-                cartObj[id][0] = 0
-                cartObj[id][1] = 1
-                $(this).parents('.footer').siblings('.image-cont').children(".count").hide();
-                MainButtonHide()
-            } else {
-                cartObj[id][1] = count
-                cartObj[id][0] = cartObj[id][0] * count
-                $(this).parents('.footer').siblings('.image-cont').children(".count").text(count);
+        // Tr ni o'chirish
+        function ochirish(element, nomer) {
+            const tr_children = element.parentElement.parentElement.children
+            for (let index = 1; index < (tr_children.length - 1); index++) {
+                const td = tr_children[index];
+                td.innerText = ""
             }
-        });
 
-        $('#edit').on('click', function () {
-            $('#food').slideDown();
-            $('#orders').slideUp();
-            tg.BackButton.hide();
-        })
+            element.previousElementSibling.previousElementSibling.removeAttribute('disabled')
+
+            // Localstoragedan ma'lumotlarni o'chirish
+            loc.removeItem('row' + nomer)
+        }
     </script>
 </body>
 
