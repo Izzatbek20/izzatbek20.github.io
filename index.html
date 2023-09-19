@@ -25,7 +25,7 @@
                 <td class="to"></td>
                 <td class="minut"></td>
                 <td class="summa"></td>
-                <td>
+                <td style="display: flex; align-items:center;justify-content:center">
                     <button class="boshlash" onclick="boshlash(this, 1)">Boshlash</button>
                     <button class="tugatish" disabled onclick="tugatish(this, 1)">Tugatish</button>
                     <button class="ochirish" onclick="ochirish(this, 1)">Tozalash</button>
@@ -37,7 +37,7 @@
                 <td class="to"></td>
                 <td class="minut"></td>
                 <td class="summa"></td>
-                <td>
+                <td style="display: flex; align-items:center;justify-content:center">
                     <button class="boshlash" onclick="boshlash(this, 2)">Boshlash</button>
                     <button class="tugatish" disabled onclick="tugatish(this, 2)">Tugatish</button>
                     <button class="ochirish" onclick="ochirish(this, 2)">Tozalash</button>
@@ -49,7 +49,7 @@
                 <td class="to"></td>
                 <td class="minut"></td>
                 <td class="summa"></td>
-                <td>
+                <td style="display: flex; align-items:center;justify-content:center">
                     <button class="boshlash" onclick="boshlash(this,3)">Boshlash</button>
                     <button class="tugatish" disabled onclick="tugatish(this,3)">Tugatish</button>
                     <button class="ochirish" onclick="ochirish(this,3)">Tozalash</button>
@@ -61,7 +61,7 @@
                 <td class="to"></td>
                 <td class="minut"></td>
                 <td class="summa"></td>
-                <td>
+                <td style="display: flex; align-items:center;justify-content:center">
                     <button class="boshlash" onclick="boshlash(this,4)">Boshlash</button>
                     <button class="tugatish" disabled onclick="tugatish(this,4)">Tugatish</button>
                     <button class="ochirish" onclick="ochirish(this,4)">Tozalash</button>
@@ -193,16 +193,19 @@
 
         // Tr ni o'chirish
         function ochirish(element, nomer) {
-            const tr_children = element.parentElement.parentElement.children
-            for (let index = 1; index < (tr_children.length - 1); index++) {
-                const td = tr_children[index];
-                td.innerText = ""
+            if (prompt('Rostdan ham ushbu qatorni tozalamoqchimisiz?')) {
+
+                const tr_children = element.parentElement.parentElement.children
+                for (let index = 1; index < (tr_children.length - 1); index++) {
+                    const td = tr_children[index];
+                    td.innerText = ""
+                }
+
+                element.previousElementSibling.previousElementSibling.removeAttribute('disabled')
+
+                // Localstoragedan ma'lumotlarni o'chirish
+                loc.removeItem('row' + nomer)
             }
-
-            element.previousElementSibling.previousElementSibling.removeAttribute('disabled')
-
-            // Localstoragedan ma'lumotlarni o'chirish
-            loc.removeItem('row' + nomer)
         }
     </script>
 </body>
