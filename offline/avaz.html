@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops</title>
+</head>
+
+<body>
+    <input type="number" step="any" id="summa">
+    <table border="1" padding="1px">
+        <thead>
+            <th>№</th>
+            <th>Boshlangan vaqt</th>
+            <th>Tugagan vaqt</th>
+            <th>Minut</th>
+            <th>Summa</th>
+            <th>Ammalar</th>
+        </thead>
+        <tbody id="table">
+            <tr>
+                <td>1</td>
+                <td class="from"></td>
+                <td class="to"></td>
+                <td class="minut"></td>
+                <td class="summa"></td>
+                <td style="display: flex; align-items:center;justify-content:center">
+                    <button class="boshlash" onclick="boshlash(this, 1)">Boshlash</button>
+                    <button class="tugatish" disabled onclick="tugatish(this, 1)">Tugatish</button>
+                    <button class="ochirish" onclick="ochirish(this, 1)">Tozalash</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="from"></td>
+                <td class="to"></td>
+                <td class="minut"></td>
+                <td class="summa"></td>
+                <td style="display: flex; align-items:center;justify-content:center">
+                    <button class="boshlash" onclick="boshlash(this, 2)">Boshlash</button>
+                    <button class="tugatish" disabled onclick="tugatish(this, 2)">Tugatish</button>
+                    <button class="ochirish" onclick="ochirish(this, 2)">Tozalash</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="from"></td>
+                <td class="to"></td>
+                <td class="minut"></td>
+                <td class="summa"></td>
+                <td style="display: flex; align-items:center;justify-content:center">
+                    <button class="boshlash" onclick="boshlash(this,3)">Boshlash</button>
+                    <button class="tugatish" disabled onclick="tugatish(this,3)">Tugatish</button>
+                    <button class="ochirish" onclick="ochirish(this,3)">Tozalash</button>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="from"></td>
+                <td class="to"></td>
+                <td class="minut"></td>
+                <td class="summa"></td>
+                <td style="display: flex; align-items:center;justify-content:center">
+                    <button class="boshlash" onclick="boshlash(this,4)">Boshlash</button>
+                    <button class="tugatish" disabled onclick="tugatish(this,4)">Tugatish</button>
+                    <button class="ochirish" onclick="ochirish(this,4)">Tozalash</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // Localstorage
+        const loc = localStorage
+        // Tablening body qismi
+        const table_body = document.getElementById('table');
+        // Yuqoridegi oldindan belgilab qo'yiladigan summa
+        const narx = document.getElementById('summa');
+
+        // Tugamalar
+        const boshlash_btns = document.querySelectorAll('.boshlash');
+        const tugatish_btns = document.querySelectorAll('.tugatish');
+        const ochirish_btns = document.querySelectorAll('.ochirish');
+
+        window.addEventListener('load', () => {
+            const table_tr = table_body.children
+            for (let index = 0; index < table_tr.length; index++) {
+                const element = table_tr[index].children;
+                for (let index_in = 0; index_in < element.length; index_in++) {
+                    const element_in = element[index_in];
+                    const loc_data = loc.getItem("row" + (index + 1))
+                    if (loc_data) {
+                        const data_json = JSON.parse(loc_data)
+                        if (element_in.className) {
+                            if (data_json.from) {
+                                element_in.innerText = data_json[element_in.className]
+                            }
+                        }
+                        if (index_in == 5) {
+                            const amallar_btn = element_in.children
+                            if (data_json.btn) {
+                                if (!data_json.btn.boshlash) {
+                                    amallar_btn[0].setAttribute('disabled', "")
+                                } else {
+                                    amallar_btn[0].removeAttribute('disabled')
+                                }
+                                if (!data_json.btn.tugatish) {
+                                    amallar_btn[1].setAttribute('disabled', "")
+                                } else {
+                                    amallar_btn[1].removeAttribute('disabled')
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            narx.value = loc.getItem('narx')
+        })
+
+        narx.addEventListener('change', element => {
+            loc.setItem('narx', element.target.value)
+        })
+
+        // Sanoqni boshlash
+        function boshlash(element, nomer) {
+            const date = new Date()
+
+            const ammalar = element.parentElement
+            const summa = ammalar.previousElementSibling
+            const minut = summa.previousElementSibling
+            const to = minut.previousElementSibling
+            const from = to.previousElementSibling
+
+            from.innerHTML = date.getHours() + " : " + date.getMinutes()
+
+            element.setAttribute('disabled', "")
+            element.nextElementSibling.removeAttribute('disabled')
+
+            // Localstoragega ma'lumot yozish
+            loc.setItem('row' + nomer, JSON.stringify({
+                'from': from.innerText,
+                'to': to.innerText,
+                'minut': minut.innerText,
+                'summa': summa.innerText,
+                'btn': {
+                    'boshlash': false,
+                    'tugatish': true,
+                }
+            }))
+        }
+
+        // Sanoqni tugatish
+        function tugatish(element, nomer) {
+
+            const ammalar = element.parentElement
+            const summa = ammalar.previousElementSibling
+            const minut = summa.previousElementSibling
+            const to = minut.previousElementSibling
+            const from = to.previousElementSibling
+
+            const from_arr = from.innerText.split(':')
+
+            const new_date = new Date()
+            const old_date = new Date(new_date.getFullYear(), new_date.getMonth(), new_date.getDay(), from_arr[0], from_arr[1])
+
+            // Vaqt oraligini minutga o'tkazib olamiz
+            const new_date_minut = (new_date.getHours() * 60) + new_date.getMinutes()
+            const old_date_minut = (old_date.getHours() * 60) + old_date.getMinutes()
+            const oraliq_minut = Math.abs(new_date_minut - old_date_minut)
+            const sum = oraliq_minut * narx.value
+
+            to.innerText = new_date.getHours() + " : " + new_date.getMinutes()
+            minut.innerText = oraliq_minut
+            summa.innerText = `${sum.toLocaleString('es-US')} so'm`
+
+            element.setAttribute('disabled', "")
+
+            // Localstoragega ma'lumot yozish
+            loc.setItem('row' + nomer, JSON.stringify({
+                'from': from.innerText,
+                'to': to.innerText,
+                'minut': minut.innerText,
+                'summa': summa.innerText,
+                'btn': {
+                    'boshlash': false,
+                    'tugatish': false,
+                }
+            }))
+        }
+
+        // Tr ni o'chirish
+        function ochirish(element, nomer) {
+            if (prompt('Rostdan ham ushbu qatorni tozalamoqchimisiz?')) {
+
+                const tr_children = element.parentElement.parentElement.children
+                for (let index = 1; index < (tr_children.length - 1); index++) {
+                    const td = tr_children[index];
+                    td.innerText = ""
+                }
+
+                element.previousElementSibling.previousElementSibling.removeAttribute('disabled')
+
+                // Localstoragedan ma'lumotlarni o'chirish
+                loc.removeItem('row' + nomer)
+            }
+        }
+    </script>
+</body>
+
+</html>

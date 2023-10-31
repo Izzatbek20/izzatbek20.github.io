@@ -1,0 +1,704 @@
+/* O'zgarmaslar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    color: white;
+}
+
+html,
+body {
+    background-color: black;
+    height: 100%;
+}
+
+.menu-svg {
+    cursor: pointer;
+}
+
+svg {
+    fill: white;
+}
+
+.main {
+    /* border: 1px solid red; */
+    width: 100%;
+    padding: 2rem;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    /* border: 1px solid yellow; */
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.content {
+    padding: 0rem 10rem;
+}
+
+.link {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
+
+
+/* Banner */
+.banner {
+    display: flex;
+    flex-direction: row;
+    padding: 10rem;
+    height: 100vh;
+}
+
+
+.banner-info {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.banner-image {
+    width: 100%;
+    flex-grow: 1;
+    position: relative;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.image-self {
+    width: 28rem;
+}
+
+.banner-info h1 {
+    color: #FFF;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 4rem;
+}
+
+.email-svg,
+.github-svg,
+.telegram-svg,
+.menu-svg,
+.phone-svg {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    margin: 0 5px;
+}
+
+.title {
+    color: #9E9E9E;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.title::before {
+    content: "<";
+}
+
+.title::after {
+    content: ">";
+}
+
+.btn {
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 0.7rem 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+}
+
+
+
+
+
+/* Footer  */
+.footer {
+    /* position: absolute; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-email>a {
+    display: flex;
+    align-items: end;
+}
+
+.footer-email>a {
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+
+/* Contact */
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    margin-bottom: 50px;
+}
+
+.title-text {
+    color: #9E9E9E;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info {
+    flex-grow: 1;
+}
+
+.contact p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    flex-grow: 1;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+}
+
+.input,
+textarea {
+    margin: 10px 0;
+    background-color: transparent;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+
+}
+
+.input:focus,
+textarea:focus {
+    border-bottom: 1px solid rgb(113, 38, 199);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.input {
+    height: 50px;
+}
+
+.form-btn {
+    margin-left: 5px;
+    width: 10rem;
+    font-size: 20px;
+    float: right;
+}
+
+.form-footer {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-input-validate {
+    font-size: 12px;
+}
+
+.validare-message li span {
+    color: red;
+}
+
+/* Skilis */
+
+.skilis-ul {
+    margin-left: 25px;
+    margin-bottom: 2rem;
+}
+
+.sklis-right {
+    padding: 1rem 2rem 0;
+}
+
+.skillis-div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skillis-div span {
+    padding: 2px 3px;
+    margin: 2px;
+    border: 1px solid white;
+}
+
+/* .skillis-ul li {
+    text-decoration: none;
+    text-decoration-style: none;
+} */
+
+
+/* NAVBAR */
+
+.sidebar {
+    background-color: black;
+    position: absolute;
+    /* top: 0; */
+    /* left: 0; */
+    display: none;
+    /* width: 0; */
+    height: 0;
+    z-index: 9;
+    transition: 1s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+
+    /* Skilis */
+    .sklis-right {
+        margin-top: 3.2rem;
+    }
+
+}
+
+/* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+    .content {
+        padding: 4rem;
+    }
+
+    .banner {
+        padding: 4rem;
+    }
+
+
+    .image-self {
+        width: 28rem;
+    }
+
+    .banner-info h1 {
+        font-size: 35px;
+        margin-bottom: 4rem;
+    }
+
+    .email-svg,
+    .github-svg,
+    .telegram-svg,
+    .menu-svg,
+    .phone-svg {
+        width: 28px;
+        height: 28px;
+        margin: 0 5px;
+    }
+
+    .title {
+        font-size: 18px;
+        margin-bottom: 2rem;
+    }
+
+    .footer-email>a {
+        font-size: 18px;
+    }
+
+
+    /* Skilis */
+    .sklis-right {
+        margin-top: 2.7rem;
+    }
+
+
+}
+
+/* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* Banner */
+    .content {
+        padding: 1rem;
+    }
+
+    .banner {
+        flex-direction: column-reverse;
+        padding: 1rem;
+    }
+
+    .banner-info h1 {
+        font-size: 25px;
+        margin-bottom: 2.5rem;
+    }
+
+    .title {
+        font-size: 15px;
+        margin-bottom: 1.5rem;
+
+    }
+
+    .btn {
+        border: 1px solid white;
+        padding: 0.3rem 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .banner-image {
+        width: 100%;
+        height: 25rem;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+    }
+
+    .image-self {
+        width: 25rem;
+        position: absolute;
+    }
+
+    /* /Banner */
+
+    .email-svg,
+    .github-svg,
+    .telegram-svg,
+    .menu-svg,
+    .phone-svg {
+        width: 25px;
+        height: 25px;
+        flex-shrink: 0;
+        margin: 0 5px;
+    }
+
+    .footer-email>a {
+        font-size: 18px;
+    }
+
+    /* Contact */
+    .contact {
+        flex-direction: column;
+    }
+
+    .contact-info p {
+        font-size: 20px;
+        margin-bottom: 2rem;
+    }
+
+    /* Skilis */
+    .sklis-right {
+        padding: 0;
+    }
+
+}
+
+/* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+    /* Banner */
+    .content {
+        padding: 1rem;
+    }
+
+    .banner {
+        flex-direction: column-reverse;
+        padding: 1rem;
+    }
+
+    .banner-info h1 {
+        font-size: 25px;
+        margin-bottom: 2.5rem;
+    }
+
+    .title {
+        font-size: 15px;
+        margin-bottom: 1.5rem;
+
+    }
+
+    .btn {
+        border: 1px solid white;
+        padding: 0.3rem 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .banner-image {
+        width: 100%;
+        height: 25rem;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+    }
+
+    .image-self {
+        width: 20rem;
+        position: absolute;
+    }
+
+    /* /Banner */
+
+    .email-svg,
+    .github-svg,
+    .telegram-svg,
+    .menu-svg,
+    .phone-svg {
+        width: 25px;
+        height: 25px;
+        flex-shrink: 0;
+        margin: 0 5px;
+    }
+
+    .footer-email>a {
+        font-size: 18px;
+    }
+
+    /* Contact */
+    .contact {
+        flex-direction: column;
+    }
+
+    .contact-info p {
+        font-size: 20px;
+        margin-bottom: 2rem;
+    }
+
+    /* Skilis */
+    .sklis-right {
+        padding: 0;
+    }
+
+}
+
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    /* Banner */
+    .content {
+        padding: 1rem;
+    }
+
+    .banner {
+        flex-direction: column-reverse;
+        padding: 1rem;
+    }
+
+    .banner-info h1 {
+        font-size: 25px;
+        margin-bottom: 2.5rem;
+    }
+
+    .title {
+        font-size: 15px;
+        margin-bottom: 1.5rem;
+
+    }
+
+    .btn {
+        border: 1px solid white;
+        padding: 0.3rem 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .banner-image {
+        width: 100%;
+        height: 25rem;
+        flex-grow: 1;
+        /* overflow: hidden; */
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+    }
+
+    .image-self {
+        width: 20rem;
+        position: absolute;
+    }
+
+    /* /Banner */
+
+    .email-svg,
+    .github-svg,
+    .telegram-svg,
+    .menu-svg,
+    .phone-svg {
+        width: 25px;
+        height: 25px;
+        flex-shrink: 0;
+        margin: 0 5px;
+    }
+
+    .footer-email>a {
+        font-size: 18px;
+    }
+
+    /* Contact */
+    .contact {
+        flex-direction: column;
+    }
+
+    .contact-info p {
+        font-size: 20px;
+        margin-bottom: 2rem;
+    }
+
+    /* Skilis */
+    .sklis-right {
+        padding: 0;
+    }
+
+}
+
+/* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    /* Banner */
+    .content {
+        padding: 0.1rem;
+    }
+
+    .banner {
+        flex-direction: column-reverse;
+        padding: 0.1rem;
+    }
+
+    .banner-info h1 {
+        font-size: 20px;
+        margin-bottom: 2rem;
+    }
+
+    .title {
+        font-size: 10px;
+        margin-bottom: 1rem;
+
+    }
+
+    .btn {
+        border: 1px solid white;
+        padding: 0.3rem 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .banner-image {
+        width: 100%;
+        height: 25rem;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+    }
+
+    .image-self {
+        width: 20rem;
+        position: absolute;
+    }
+
+    /* /Banner */
+
+    .email-svg,
+    .github-svg,
+    .telegram-svg,
+    .menu-svg,
+    .phone-svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        margin: 0 5px;
+    }
+
+    .footer-email>a {
+        font-size: 12px;
+    }
+
+    /* Contact */
+    .contact {
+        flex-direction: column;
+    }
+
+    .contact-info p {
+        font-size: 20px;
+        margin-bottom: 2rem;
+    }
+
+    /* Skilis */
+    .sklis-right {
+        padding: 0;
+    }
+}
