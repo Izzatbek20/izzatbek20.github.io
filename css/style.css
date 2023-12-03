@@ -1,0 +1,24 @@
+.title {
+    color: #9E9E9E;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.title::before {
+    content: "<";
+}
+
+.title::after {
+    content: ">";
+}
+
+.name {
+    background: -webkit-linear-gradient(275.68deg, #3A8EE6 0%, #C03AE7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
