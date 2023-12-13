@@ -8,6 +8,9 @@
     <meta name="description" content="Mening ismim Izzatbek. Men php backend dasturchisiman.">
     <link href="/dist/main.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
+    <link href="/js/split/css/splide.min.css" rel="stylesheet">
+    <script src="/js/split/js/splide.min.js"></script>
+    <script src="/js/split-auto-scroll/js/splide-extension-auto-scroll.min.js"></script>
 </head>
 
 <body class="bg-black">
@@ -31,7 +34,7 @@
         <!-- Skillis -->
         <div id="#skillis" class="text-white h-screen">
             <h2 class="title text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">Malakalar</h2>
-            <div class="flex md:flex-row lg:flex-row xl:flex-row 2xl:flex-row flex-col">
+            <div class="flex md:flex-row lg:flex-row xl:flex-row 2xl:flex-row flex-col mb-10">
                 <div class="flex-1 pr-10 mb-20">
                     <h2 class="text-2xl font-size mb-10 text-4xl leading-tight md:text-5xl lg:text-5xl xl:text-5xl">
                         Mutaxassis sifatida ega bo'lgan ko'nikmalarim
@@ -62,10 +65,47 @@
                     <img src="/images/skillis/aiogram.png" class="w-14 sm:w-14 md:w-20" alt="Aiogram">
                 </div>
             </div>
+            <a href="/images/Resume.jpg" download="" class="underline hover:text-zinc-800 flex align-bottom">
+                <img src="/icons/file.svg" alt="" srcset="" class="w-5"> Rezyumeni yuklab olish uchun bosing.
+            </a>
         </div>
         <!-- /Skillis -->
-    </div>
 
+        <!-- Projects -->
+        <!-- <div id="#Projects" class="text-white h-screen">
+            <h2 class="title text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">Loyihalar</h2>
+            <div class="flex md:flex-row lg:flex-row xl:flex-row 2xl:flex-row flex-col mb-10">
+                <div class="flex-1 pr-10 mb-20">
+                    <div class="border">
+                        <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide border h-96">Slide 01</li>
+                                    <li class="splide__slide border h-96">Slide 02</li>
+                                    <li class="splide__slide border h-96">Slide 03</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- /Projects -->
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var splide = new Splide('.splide', {
+                type: 'loop',
+                padding: '5rem',
+                // perPage: 2,
+                autoScroll: {
+                    speed: 1,
+                },
+            });
+
+            splide.mount(window.splide.Extensions);
+        });
+    </script>
 </body>
 
 </html>
