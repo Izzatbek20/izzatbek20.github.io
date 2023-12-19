@@ -32,10 +32,10 @@
         <!-- /Banner -->
 
         <!-- Skillis -->
-        <div id="#skillis" class="text-white h-screen">
+        <div id="#skillis" class="text-white mt-32">
             <h2 class="title text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">Malakalar</h2>
             <div class="flex md:flex-row lg:flex-row xl:flex-row 2xl:flex-row flex-col mb-10">
-                <div class="flex-1 pr-10 mb-20">
+                <div class="flex-1 mb-20">
                     <h2 class="text-2xl font-size mb-10 text-4xl leading-tight md:text-5xl lg:text-5xl xl:text-5xl">
                         Mutaxassis sifatida ega bo'lgan ko'nikmalarim
                     </h2>
@@ -65,44 +65,65 @@
                     <img src="/images/skillis/aiogram.png" class="w-14 sm:w-14 md:w-20" alt="Aiogram">
                 </div>
             </div>
-            <a href="/images/Resume.jpg" download="" class="underline hover:text-zinc-800 flex align-bottom">
+            <a href="/images/Resume.png" download="" class="underline hover:text-zinc-800 flex align-bottom">
                 <img src="/icons/file.svg" alt="" srcset="" class="w-5"> Rezyumeni yuklab olish uchun bosing.
             </a>
         </div>
         <!-- /Skillis -->
 
         <!-- Projects -->
-        <!-- <div id="#Projects" class="text-white h-screen">
+        <div id="#Projects" class="text-white mt-32">
             <h2 class="title text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">Loyihalar</h2>
             <div class="flex md:flex-row lg:flex-row xl:flex-row 2xl:flex-row flex-col mb-10">
-                <div class="flex-1 pr-10 mb-20">
-                    <div class="border">
-                        <div class="splide" role="group" aria-label="Splide Basic HTML Example">
-                            <div class="splide__track">
-                                <ul class="splide__list">
-                                    <li class="splide__slide border h-96">Slide 01</li>
-                                    <li class="splide__slide border h-96">Slide 02</li>
-                                    <li class="splide__slide border h-96">Slide 03</li>
-                                </ul>
-                            </div>
+                <div class="flex-1 mb-20">
+                    <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide cursor-pointer">
+                                    <img src="/images/projects/ideal/1.png">
+                                    <div>
+                                        <h2 class="splide-title">Ideal</h2>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <!-- /Projects -->
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var splide = new Splide('.splide', {
                 type: 'loop',
-                padding: '5rem',
-                // perPage: 2,
+                padding: '3rem',
+                gap: 10,
+                width: '100%',
+                perPage: 2,
                 autoScroll: {
-                    speed: 1,
+                    speed: 0.2,
                 },
+                breakpoints: {
+                    1200: {
+                        perPage: 2,
+                        padding: '2rem',
+                    },
+                    640: {
+                        perPage: 1,
+                        type: 'loop',
+                        padding: '0',
+                        gap: 5,
+                        autoScroll: {
+                            speed: 0.2,
+                        },
+                    },
+                }
             });
 
+            splide.on('click', function (e) {
+                console.log(e);
+            });
             splide.mount(window.splide.Extensions);
         });
     </script>
