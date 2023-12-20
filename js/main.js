@@ -3,9 +3,10 @@ const tg = {
     chat_id: 1733819468
 }
 document.getElementById('contact').onsubmit = (e) => {
-    let form_name = document.getElementById('form-name');
-    let form_email = document.getElementById('form-email');
-    let form_message = document.getElementById('form-message');
+    let form_name = document.getElementById('name');
+    let form_email = document.getElementById('email');
+    let form_message = document.getElementById('messsage');
+    let form_alert = document.getElementById('form-alert');
 
     const Http = new XMLHttpRequest();
 
@@ -24,7 +25,6 @@ document.getElementById('contact').onsubmit = (e) => {
     } else {
         form_message.style.borderColor = "rgb(46, 99, 172)";
     }
-
     if (form_name.value && form_email.value && form_message.value) {
         let text = `<b>Ism</b>: ${form_name.value}%0A<b>Aloqa uchun</b>: ${form_email.value}%0A<b>Habar</b>: ${form_message.value}`
         let url = `https://api.telegram.org/bot${tg.token}/sendMessage?chat_id=${tg.chat_id}&text=${text}&parse_mode=html`;
@@ -34,12 +34,56 @@ document.getElementById('contact').onsubmit = (e) => {
         form_name.value = ''
         form_email.value = ''
         form_message.value = ''
-    }
 
+        form_alert.style.display = 'block';
+        e.preventDefault();
+    } else {
+        if (form_name.value == "") {
+            form_name.style.borderColor = "red";
+        } else {
+            form_name.style.borderColor = "rgb(46, 99, 172)";
+        }
+        if (form_email.value == "") {
+            form_email.style.borderColor = "red";
+        } else {
+            form_email.style.borderColor = "rgb(46, 99, 172)";
+        }
+        if (form_message.value == "") {
+            form_message.style.borderColor = "red";
+        } else {
+            form_message.style.borderColor = "rgb(46, 99, 172)";
+        }
+        e.preventDefault();
+    }
 }
 
-const sideabar = document.querySelector('.sidebar')
-document.querySelector('#menu').addEventListener('click', (e) => {
-    sideabar.style.display = 'block'
-    sideabar.style.height = '100vh'
-})
+document.addEventListener('DOMContentLoaded', function () {
+    var splide = new Splide('.splide', {
+        type: 'loop',
+        gap: 10,
+        width: '100%',
+        perPage: 2,
+        autoScroll: {
+            speed: 0.2,
+        },
+        breakpoints: {
+            1200: {
+                perPage: 2,
+            },
+            640: {
+                perPage: 1,
+                type: 'loop',
+                padding: '0',
+                gap: 5,
+                autoScroll: {
+                    speed: 0.2,
+                },
+            },
+        }
+    });
+
+    splide.on('click', function (e) {
+        console.log(e);
+    });
+    splide.mount(window.splide.Extensions);
+});

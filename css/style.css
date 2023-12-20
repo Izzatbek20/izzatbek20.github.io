@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .title {
     color: #9E9E9E;
     /* font-size: 24px; */
@@ -22,6 +26,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .splide__slide:hover .splide-title {
     display: block;
     position: absolute;

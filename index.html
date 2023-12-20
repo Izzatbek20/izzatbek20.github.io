@@ -9,11 +9,12 @@
     <link href="/dist/main.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     <link href="/js/split/css/splide.min.css" rel="stylesheet">
+
     <script src="/js/split/js/splide.min.js"></script>
     <script src="/js/split-auto-scroll/js/splide-extension-auto-scroll.min.js"></script>
 </head>
 
-<body class="bg-black">
+<body class="bg-black select-none">
 
     <div class="block relative w-full px-10 md:px-28 lg:px-28 xl:px-28 2xl:px-28">
         <!-- Banner -->
@@ -23,10 +24,9 @@
                 <h2 class="text-5xl md:text-6xl lg:text-6xl xl:text-6xl 2xl:text-6xl font-bold leading-tight mb-10">
                     Mening ismim <span class="name">Izzatbek</span>. Men php backend
                     dasturchisiman.</h2>
-                <button
-                    class="btn text-4xl border py-2 px-5 mt-5 hover:border-transparent hover:bg-white hover:text-black text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">Men
-
-                    bilan bog'lanish</button>
+                <a href="#contact"
+                    class="btn border py-2 px-5 mt-10 hover:border-transparent hover:bg-white hover:text-black text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">
+                    Men bilan bog'lanish</a>
             </div>
         </div>
         <!-- /Banner -->
@@ -35,8 +35,8 @@
         <div id="#skillis" class="text-white mt-32">
             <h2 class="title text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">Malakalar</h2>
             <div class="flex md:flex-row lg:flex-row xl:flex-row 2xl:flex-row flex-col mb-10">
-                <div class="flex-1 mb-20">
-                    <h2 class="text-2xl font-size mb-10 text-4xl leading-tight md:text-5xl lg:text-5xl xl:text-5xl">
+                <div class="flex-1 mb-20 md:pr-5 lg:pr-10 xl:pr-20">
+                    <h2 class="font-size mb-10 text-4xl leading-tight md:text-5xl lg:text-5xl xl:text-5xl">
                         Mutaxassis sifatida ega bo'lgan ko'nikmalarim
                     </h2>
                     <ul class="ml-10 list-disc text-base md:text-lg lg:text-xl xl:text-xl">
@@ -92,41 +92,76 @@
             </div>
         </div>
         <!-- /Projects -->
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var splide = new Splide('.splide', {
-                type: 'loop',
-                padding: '3rem',
-                gap: 10,
-                width: '100%',
-                perPage: 2,
-                autoScroll: {
-                    speed: 0.2,
-                },
-                breakpoints: {
-                    1200: {
-                        perPage: 2,
-                        padding: '2rem',
-                    },
-                    640: {
-                        perPage: 1,
-                        type: 'loop',
-                        padding: '0',
-                        gap: 5,
-                        autoScroll: {
-                            speed: 0.2,
-                        },
-                    },
-                }
-            });
 
-            splide.on('click', function (e) {
-                console.log(e);
-            });
-            splide.mount(window.splide.Extensions);
-        });
-    </script>
+        <!-- Contact -->
+        <div id="#contact-component" class="text-white mt-32">
+            <h2 class="title text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">Aloqa</h2>
+            <div class="flex md:flex-row lg:flex-row xl:flex-row 2xl:flex-row flex-col mb-10">
+                <div class="flex-1 mb-20 md:pr-5 lg:pr-10 xl:pr-20">
+                    <h2 class="font-size mb-10 text-2xl leading-tight md:text-2xl lg:text-3xl xl:text-3xl">
+                        Menga xohlagan vaqtda va xohlagancha xabar bering va biz hamkorlikni boshlaymiz.
+                    </h2>
+                    <div class="mb-10">
+                        <h2 class="uppercase text-xl md:text-2xl lg:text-3xl xl:text-3xl">
+                            Telefon
+                        </h2>
+                        <a href="tel:+998937278014" class="underline text-lg md:text-lg lg:text-xl xl:text-xl mt-5">
+                            +998 93 727 80 14
+                        </a>
+                    </div>
+                    <div class="mb-10">
+                        <h2 class="uppercase text-xl md:text-2xl lg:text-3xl xl:text-3xl">
+                            Elektron pochta
+                        </h2>
+                        <a href="mailto:izzatbekmajidov200020@gmail.com"
+                            class="underline text-lg md:text-lg lg:text-xl xl:text-xl mt-5">
+                            izzatbekmajidov200020@gmail.com
+                        </a>
+                    </div>
+
+                </div>
+                <div class="flex-1">
+                    <span class="text-green-800 hidden" id="form-alert">Ma'lumotlaringiz yuborildi !!!</span>
+                    <form class="w-full" id="contact" method="POST">
+                        <input type="text" id="name" placeholder="Ism"
+                            class="w-full mb-5 bg-transparent border-b border-b-white outline-none py-3 text-xl">
+                        <input type="text" id="email" placeholder="Elektron pochta yoki telefon"
+                            class="w-full mb-5 bg-transparent border-b border-b-white outline-none py-3 text-xl">
+                        <textarea id="messsage" cols="30" rows="5" placeholder="Sizning xabaringiz"
+                            class="w-full mb-5 bg-transparent border-b border-b-white outline-none py-3 text-xl"></textarea>
+                        <button
+                            class="btn border py-2 px-5 mt-5 hover:border-transparent hover:bg-white hover:text-black text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">Yuborish</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /Contact -->
+
+        <!-- Footer -->
+        <div id="#footer" class="text-white mt-40 py-7">
+            <div class="flex justify-between items-center">
+                <div class="">
+                    <a href="" class="flex items-end gap-2">
+                        <img src="/icons/email.svg" class="h-8">
+                        <span class="text-xl">E-pochta</span>
+                    </a>
+                </div>
+                <div class="flex gap-5">
+                    <a href="https://github.com/Izzatbek20" target="_blank">
+                        <img src="/icons/github.svg" class="h-8" alt="Github">
+                    </a>
+                    <a href="https://t.me/i2000_code" target="_blank">
+                        <img src="/icons/telegram.svg" class="h-8" alt="Telegram">
+                    </a>
+                    <a href="tel:+998937278014" target="_blank">
+                        <img src="/icons/phone.svg" class="h-8" alt="Telefon">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /Footer -->
+    </div>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
