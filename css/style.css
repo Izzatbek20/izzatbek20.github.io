@@ -168,9 +168,9 @@ html {
 .scroll-btn .mouse {
     position: relative;
     display: block;
-    bottom: 3rem;
-    width: 35px;
-    height: 55px;
+    bottom: 2rem;
+    width: 25px;
+    height: 40px;
     margin: 0 auto 20px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -183,13 +183,19 @@ html {
     position: absolute;
     display: block;
     top: 29%;
-    left: 50%;
-    width: 8px;
-    height: 8px;
+    left: 58%;
+    width: 5px;
+    height: 5px;
     margin: -4px 0 0 -4px;
     background: white;
     border-radius: 50%;
     -webkit-animation: ani-mouse 2.5s linear infinite;
     -moz-animation: ani-mouse 2.5s linear infinite;
     animation: ani-mouse 2.5s linear infinite;
+}
+
+.cursor{
+    position: relative;
+    /* left: -2.5rem; */
+    left: -3rem;
 }
