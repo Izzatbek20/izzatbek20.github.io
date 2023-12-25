@@ -53,11 +53,13 @@ tl.to('.banner-text-1', {
     }
 }).fromTo('#banner-contact-btn', {
     x: "-50vw",
+    maxWidth: 0,
     display: 0,
 }, {
     display: 1,
     x: 0,
-    duration: 2.5,
+    maxWidth: '100%',
+    duration: 2,
     ease: "elastic.out(1,0.3)",
 }).fromTo('.mouse', {
     opacity: 0
