@@ -1,4 +1,4 @@
-// Plaginlarni ro'yxatga olish
+// // Plaginlarni ro'yxatga olish
 gsap.registerPlugin(MotionPathPlugin, ScrollTrigger, ScrollToPlugin)
 
 const cursor_1 = document.getElementById('cursor-1');
@@ -98,21 +98,21 @@ tl.to('.banner-text-1', {
     opacity: 1,
 });
 
-const words = ['Imm.', 'Izzatbek.', 'Majidov.']
-let tl_name = gsap.timeline({
-    delay: 6.5,
-    repeat: -1
-})
+// const words = ['Imm.', 'Izzatbek.', 'Majidov.']
+// let tl_name = gsap.timeline({
+//     delay: 6.5,
+//     repeat: -1
+// })
 
-words.forEach(word => {
-    tl_name.to('.name', {
-        duration: 1,
-        text: word,
-        // chars: '010110010110011011',
-        // revealDelay: 0.5,
-        // speed: 0.3,
-    })
-});
+// words.forEach(word => {
+//     tl_name.to('.name', {
+//         duration: 1,
+//         text: word,
+//         // chars: '010110010110011011',
+//         // revealDelay: 0.5,
+//         // speed: 0.3,
+//     })
+// });
 
 
 // Pastga scroll bo'lganda "mouse down scroll" yo'qotib qo'yamiz
@@ -183,3 +183,19 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
 }
+
+// let tl = gsap.timeline()
+
+// gsap.to('.php', {
+//     scrollTrigger: {
+//         trigger: '.php',
+//         start: "top center",
+//         end: "bottom 100px",
+//         markers: true,
+//         toggleActions: "play none none reverse",
+//         // once: true
+
+//     },
+//     x: 200,
+//     duration: 1
+// })
