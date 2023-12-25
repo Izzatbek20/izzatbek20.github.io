@@ -13,15 +13,6 @@ html {
     align-items: center;
 }
 
-/* .title::before {
-    content: "#";
-    padding-right: 5px;
-} */
-
-/* .title::after {
-    content: ">";
-} */
-
 .name {
     background: -webkit-linear-gradient(275.68deg, #3A8EE6 0%, #C03AE7 100%);
     -webkit-background-clip: text;
@@ -52,7 +43,7 @@ html {
 .mous_scroll {
     position: absolute;
     left: 0;
-    bottom: 0.5rem;
+    bottom: 2rem;
     width: 100%;
     height: 40px;
     text-align: center;
