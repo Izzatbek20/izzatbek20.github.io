@@ -52,7 +52,7 @@ tl.to('.banner-text-1', {
         }, 400)
     }
 }).fromTo('#banner-contact-btn', {
-    x: "-30vw",
+    x: "-50vw",
     display: 0,
 }, {
     display: 1,
