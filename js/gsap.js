@@ -1,7 +1,8 @@
 // Plaginlarni ro'yxatga olish
 gsap.registerPlugin(MotionPathPlugin, ScrollTrigger, ScrollToPlugin)
 
-const cursor = document.getElementById('cursor');
+const cursor_1 = document.getElementById('cursor-1');
+const cursor_2 = document.getElementById('cursor-2');
 const cursor_coment = document.getElementById('cursor-coment');
 const body = document.getElementById('body');
 
@@ -24,6 +25,9 @@ let tl = gsap.timeline({
     onStart: () => {
         // Banner-dagi animatsiya tugaguncha scrollni uchlab turazmi
         body.classList.add("scroll-disabled")
+
+        cursor_1.style.display = 'none';
+        cursor_2.style.display = 'none';
     },
     onComplete: () => {
         // Banner-dagi animatsiya tugaguncha scrollni uchlab turazmi
@@ -48,18 +52,30 @@ tl.to('.banner-coment', {
 tl.to('.banner-text-1', {
     delay: 0.5,
     duration: 1,
-    text: 'Mening ismim'
+    text: 'Mening ismim',
+    onStart: () => {
+        cursor_1.style.display = 'inline-block';
+    },
+    onComplete: () => {
+        // .4s kursorni yashiradi
+        setTimeout(() => {
+            cursor_1.style.display = 'none';
+        }, 100)
+    }
 }).to('.name', {
     duration: 1,
     text: 'Izzatbek.'
 }).to('.banner-text-2', {
     duration: 1,
     text: 'Men php backend dasturchisiman.',
+    onStart: () => {
+        cursor_2.style.display = 'inline-block';
+    },
     onComplete: () => {
         // .4s kursorni yashiradi
         setTimeout(() => {
-            cursor.style.display = 'none';
-        }, 400)
+            cursor_2.style.display = 'none';
+        }, 600)
     }
 }).fromTo('#banner-contact-btn', {
     x: "-50vw",
@@ -82,6 +98,22 @@ tl.to('.banner-text-1', {
     opacity: 1,
 });
 
+const words = ['Imm.', 'Izzatbek.', 'Majidov.']
+let tl_name = gsap.timeline({
+    delay: 6.5,
+    repeat: -1
+})
+
+words.forEach(word => {
+    tl_name.to('.name', {
+        duration: 1,
+        text: word,
+        // chars: '010110010110011011',
+        // revealDelay: 0.5,
+        // speed: 0.3,
+    })
+});
+
 
 // Pastga scroll bo'lganda "mouse down scroll" yo'qotib qo'yamiz
 gsap.to(".mous_scroll", {
@@ -92,6 +124,62 @@ gsap.to(".mous_scroll", {
         end: "bottom bottom",
         // markers: true,
         toggleActions: "play none none reverse",
-        once: true
+        // once: true
     },
 });
+
+
+// Button hover uchun
+function buttonHover(box, limit, interval) {
+    for (let index = 0; index <= limit; index++) {
+        const item = document.createElement('div')
+        const w_h = getRandomInt(1, 10)
+        item.className = 'item' + index + interval
+        item.style.width = w_h + 'px';
+        item.style.height = w_h + 'px';
+        item.style.display = 'inline-block';
+        item.style.margin = '1px';
+        item.style.position = 'absolute';
+        item.style.zIndex = -1;
+        item.style.left = getRandomInt(0, box.offsetWidth) + "px";
+        item.style.backgroundColor = 'white';
+
+        box.appendChild(item)
+
+        let y = getRandomInt(0, 150) - getRandomInt(0, 150)
+        let x = getRandomInt(0, 150) - getRandomInt(0, 150)
+        gsap.to('.' + item.className, {
+            y: y,
+            x: x,
+            width: 0,
+            height: 0,
+            opacity: 0,
+            duration: 2,
+            ease: 'none',
+        })
+        setTimeout(() => {
+            item.remove()
+        }, 3000)
+    }
+}
+
+// Banner burron hover
+let hoverTime;
+
+document.getElementById('banner-contact-btn').addEventListener('mouseover', function (e) {
+    let i = 1
+    hoverTime = setInterval(function () {
+        buttonHover(e.target, 10, i)
+        i++
+    }, 200);
+})
+document.getElementById('banner-contact-btn').addEventListener('mouseout', function () {
+    clearInterval(hoverTime)
+})
+
+// Random int
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+}
