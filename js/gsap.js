@@ -1,8 +1,9 @@
 // Plaginlarni ro'yxatga olish
-gsap.registerPlugin(MotionPathPlugin)
+gsap.registerPlugin(MotionPathPlugin, ScrollTrigger, ScrollToPlugin)
 
 const cursor = document.getElementById('cursor');
 const cursor_coment = document.getElementById('cursor-coment');
+const body = document.getElementById('body');
 
 // Surcor ni animatsiyasi
 gsap.to('.cursor', {
@@ -19,7 +20,16 @@ gsap.to('.cursor-coment', {
 
 
 // Banner
-let tl = gsap.timeline();
+let tl = gsap.timeline({
+    onStart: () => {
+        // Banner-dagi animatsiya tugaguncha scrollni uchlab turazmi
+        body.classList.add("scroll-disabled")
+    },
+    onComplete: () => {
+        // Banner-dagi animatsiya tugaguncha scrollni uchlab turazmi
+        body.classList.remove("scroll-disabled")
+    }
+});
 
 
 tl.to('.banner-coment', {
@@ -70,4 +80,18 @@ tl.to('.banner-text-1', {
     opacity: 0
 }, {
     opacity: 1,
+});
+
+
+// Pastga scroll bo'lganda "mouse down scroll" yo'qotib qo'yamiz
+gsap.to(".mous_scroll", {
+    opacity: 0,
+    scrollTrigger: {
+        trigger: ".mous_scroll",
+        start: "top center",
+        end: "bottom bottom",
+        // markers: true,
+        toggleActions: "play none none reverse",
+        once: true
+    },
 });

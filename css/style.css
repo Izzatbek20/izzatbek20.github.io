@@ -2,6 +2,11 @@ html {
     scroll-behavior: smooth;
 }
 
+.scroll-disabled {
+    height: 100vh;
+    overflow: hidden;
+}
+
 .title {
     color: #9E9E9E;
     /* font-size: 24px; */
@@ -186,7 +191,7 @@ html {
     animation: ani-mouse 2.5s linear infinite;
 }
 
-.cursor{
+.cursor {
     position: relative;
     /* left: -2.5rem; */
     left: -3rem;
