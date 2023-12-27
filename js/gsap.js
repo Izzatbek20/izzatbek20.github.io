@@ -3,7 +3,6 @@ gsap.registerPlugin(MotionPathPlugin, ScrollTrigger, ScrollToPlugin)
 
 const cursor_1 = document.getElementById('cursor-1');
 const cursor_2 = document.getElementById('cursor-2');
-const cursor_coment = document.getElementById('cursor-coment');
 const body = document.getElementById('body');
 
 // Surcor ni animatsiyasi
@@ -24,15 +23,15 @@ gsap.to('.cursor-coment', {
 let tl = gsap.timeline({
     onStart: () => {
         // Banner-dagi animatsiya tugaguncha scrollni uchlab turazmi
-        body.classList.add("scroll-disabled")
+        // body.classList.add("scroll-disabled")
 
         cursor_1.style.display = 'none';
         cursor_2.style.display = 'none';
     },
     onComplete: () => {
         // Banner-dagi animatsiya tugaguncha scrollni uchlab turazmi
-        body.classList.remove("scroll-disabled")
-    }
+        // body.classList.remove("scroll-disabled")
+    },
 });
 
 
@@ -43,7 +42,7 @@ tl.to('.banner-coment', {
     onComplete: () => {
         // .4s kursorni yashiradi
         setTimeout(() => {
-            cursor_coment.style.display = 'none';
+            document.getElementById('cursor-coment').style.display = 'none';
         }, 400)
     }
 })
@@ -78,12 +77,14 @@ tl.to('.banner-text-1', {
         }, 600)
     }
 }).fromTo('#banner-contact-btn', {
-    x: "-50vw",
+    y: "5vh",
+    opacity: 0,
     maxWidth: 0,
     display: 0,
 }, {
     display: 1,
-    x: 0,
+    y: 0,
+    opacity: 1,
     maxWidth: '100%',
     duration: 2,
     ease: "elastic.out(1,0.3)",
@@ -184,18 +185,52 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
 }
 
-// let tl = gsap.timeline()
 
-// gsap.to('.php', {
-//     scrollTrigger: {
-//         trigger: '.php',
-//         start: "top center",
-//         end: "bottom 100px",
-//         markers: true,
-//         toggleActions: "play none none reverse",
-//         // once: true
+// Skillis ni animatsiyasi
 
-//     },
-//     x: 200,
-//     duration: 1
-// })
+gsap.to('.skillis_title', {
+    duration: 1,
+    text: "# Malakalar",
+    scrollTrigger: {
+        trigger: '.skillis_title',
+        start: 'top 80%',
+        end: 'bottom 50%',
+    },
+    onComplete: () => {
+        // .4s kursorni yashiradi
+        setTimeout(() => {
+            document.getElementById('skillis-cursor').style.display = 'none';
+        }, 400)
+    }
+})
+
+gsap.from('.skillis-images', {
+    x: `+=${document.querySelector('.skillis-images').offsetWidth}`,
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.skillis-images',
+        start: 'top 80%',
+        end: 'bottom 50%',
+    }
+})
+gsap.from('.skillis-text', {
+    x: `+=-${document.querySelector('.skillis-text').offsetWidth}`,
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.skillis-text',
+        start: 'top 80%',
+        end: 'bottom 50%',
+    }
+})
+gsap.from('.resume-dowbload', {
+    y: '20vh',
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.skillis-text',
+        start: 'top 80%',
+        end: 'bottom 50%',
+    }
+})

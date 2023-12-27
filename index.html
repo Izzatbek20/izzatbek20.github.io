@@ -26,6 +26,25 @@
 
 <body class="bg-black select-none" id="body">
 
+    <!-- <nav class="fixed top-0 left-0 w-full text-white p-10 flex justify-end">
+        <a href="" class="mx-5">
+            <span>#</span>
+            <span class="underline">Salom, dunyo</span>
+        </a>
+        <a href="" class="mx-5">
+            <span>#</span>
+            <span class="underline">Malakalar</span>
+        </a>
+        <a href="" class="mx-5">
+            <span>#</span>
+            <span class="underline">Loyihalar</span>
+        </a>
+        <a href="" class="mx-5">
+            <span>#</span>
+            <span class="underline">Aloqa</span>
+        </a>
+    </nav> -->
+
     <div class="block relative w-full px-10 md:px-28 lg:px-28 xl:px-28 2xl:px-28">
         <!-- Banner -->
         <div id="banner" class="text-white h-screen flex items-center relative banner">
@@ -76,42 +95,48 @@
         <!-- /Banner -->
 
         <!-- Skillis -->
-        <div id="skillis" class="text-white mt-32">
-            <h2 class="title text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl"># Malakalar</h2>
-            <div class="flex md:flex-row lg:flex-row xl:flex-row 2xl:flex-row flex-col mb-10">
-                <div class="flex-1 mb-20 md:pr-5 lg:pr-10 xl:pr-20">
-                    <h2 class="font-size mb-10 text-4xl leading-tight md:text-5xl lg:text-5xl xl:text-5xl">
-                        Mutaxassis sifatida ega bo'lgan ko'nikmalarim
-                    </h2>
-                    <ul class="ml-10 list-disc text-base md:text-lg lg:text-xl xl:text-xl">
-                        <li>Turli xil murakkablikdagi veb-saytlar yaratish .</li>
-                        <li>Ma'lumotlar bazasini ishlab chiqish.</li>
-                        <li>Telegram botlarini yaratish.</li>
-                        <li>E-commerce (elektron tijorat).</li>
-                        <li>CRM tizimlari.</li>
-                        <li>API ishlab chiqish.</li>
-                        <li>Linux bilan ishlash (ozmoz, boshlang'ich buyruqlar :)</li>
-                    </ul>
+        <div id="skillis" class="text-white mt-32 h-screen flex items-center justify-center">
+            <div>
+                <h2 class="title text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">
+                    <div class="skillis_title inline-block"></div>
+                    <div class="cursor-coment inline" id="skillis-cursor">|</div>
+                </h2>
+                <div class="flex md:flex-row lg:flex-row xl:flex-row 2xl:flex-row flex-col mb-10">
+                    <div class="flex-1 mb-20 md:pr-5 lg:pr-10 xl:pr-20 skillis-text">
+                        <h2 class="font-size mb-10 text-4xl leading-tight md:text-5xl lg:text-5xl xl:text-5xl">
+                            Mutaxassis sifatida ega bo'lgan ko'nikmalarim
+                        </h2>
+                        <ul class="ml-10 list-disc text-base md:text-lg lg:text-xl xl:text-xl">
+                            <li>Turli xil murakkablikdagi veb-saytlar yaratish .</li>
+                            <li>Ma'lumotlar bazasini ishlab chiqish.</li>
+                            <li>Telegram botlarini yaratish.</li>
+                            <li>E-commerce (elektron tijorat).</li>
+                            <li>CRM tizimlari.</li>
+                            <li>API ishlab chiqish.</li>
+                            <li>Linux bilan ishlash (ozmoz, boshlang'ich buyruqlar :)</li>
+                        </ul>
+                    </div>
+                    <div
+                        class="flex-1 grid grid-flow-row gap-4 grid-cols-3 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-4 skillis-images">
+                        <img src="/images/skillis/php.png" class="w-14 sm:w-14 md:w-20 php" alt="PHP">
+                        <img src="/images/skillis/laravel.png" class="w-14 sm:w-14 md:w-20" alt="Laravel">
+                        <img src="/images/skillis/yii2.png" class="w-14 sm:w-14 md:w-20" alt="Yii2">
+                        <img src="/images/skillis/mysql.png" class="w-14 sm:w-14 md:w-20" alt="MySQL">
+                        <img src="/images/skillis/html.png" class="w-14 sm:w-14 md:w-20" alt="Html">
+                        <img src="/images/skillis/css.png" class="w-14 sm:w-14 md:w-20" alt="CSS">
+                        <img src="/images/skillis/javascript.png" class="w-14 sm:w-14 md:w-20" alt="Javascript">
+                        <img src="/images/skillis/jQuery.png" class="w-14 sm:w-14 md:w-20" alt="jQuery">
+                        <img src="/images/skillis/bootstrap.jpg" class="w-14 sm:w-14 md:w-20" alt="Bootstrap">
+                        <img src="/images/skillis/git.png" class="w-14 sm:w-14 md:w-20" alt="Git">
+                        <img src="/images/skillis/python.png" class="w-14 sm:w-14 md:w-20" alt="Python">
+                        <img src="/images/skillis/aiogram.png" class="w-14 sm:w-14 md:w-20" alt="Aiogram">
+                    </div>
                 </div>
-                <div
-                    class="flex-1 grid grid-flow-row gap-4 grid-cols-3 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-4">
-                    <img src="/images/skillis/php.png" class="w-14 sm:w-14 md:w-20 php" alt="PHP">
-                    <img src="/images/skillis/laravel.png" class="w-14 sm:w-14 md:w-20" alt="Laravel">
-                    <img src="/images/skillis/yii2.png" class="w-14 sm:w-14 md:w-20" alt="Yii2">
-                    <img src="/images/skillis/mysql.png" class="w-14 sm:w-14 md:w-20" alt="MySQL">
-                    <img src="/images/skillis/html.png" class="w-14 sm:w-14 md:w-20" alt="Html">
-                    <img src="/images/skillis/css.png" class="w-14 sm:w-14 md:w-20" alt="CSS">
-                    <img src="/images/skillis/javascript.png" class="w-14 sm:w-14 md:w-20" alt="Javascript">
-                    <img src="/images/skillis/jQuery.png" class="w-14 sm:w-14 md:w-20" alt="jQuery">
-                    <img src="/images/skillis/bootstrap.jpg" class="w-14 sm:w-14 md:w-20" alt="Bootstrap">
-                    <img src="/images/skillis/git.png" class="w-14 sm:w-14 md:w-20" alt="Git">
-                    <img src="/images/skillis/python.png" class="w-14 sm:w-14 md:w-20" alt="Python">
-                    <img src="/images/skillis/aiogram.png" class="w-14 sm:w-14 md:w-20" alt="Aiogram">
-                </div>
+                <a href="/images/Resume.png" download=""
+                    class="underline hover:text-zinc-800 flex align-bottom resume-dowbload">
+                    <img src="/icons/file.svg" alt="" srcset="" class="w-5"> Rezyumeni yuklab olish uchun bosing.
+                </a>
             </div>
-            <a href="/images/Resume.png" download="" class="underline hover:text-zinc-800 flex align-bottom">
-                <img src="/icons/file.svg" alt="" srcset="" class="w-5"> Rezyumeni yuklab olish uchun bosing.
-            </a>
         </div>
         <!-- /Skillis -->
 
