@@ -22,17 +22,27 @@ gsap.to('.cursor-coment', {
 // Banner
 let tl = gsap.timeline({
     onStart: () => {
-        // Banner-dagi animatsiya tugaguncha scrollni uchlab turazmi
-        // body.classList.add("scroll-disabled")
-
         cursor_1.style.display = 'none';
         cursor_2.style.display = 'none';
     },
-    onComplete: () => {
-        // Banner-dagi animatsiya tugaguncha scrollni uchlab turazmi
-        // body.classList.remove("scroll-disabled")
-    },
 });
+
+
+// Ekran sahifani yuqorisida turgan bo'lsa banner animatsiyasiga ruxsat beramiz. 
+// Agar pasta bo'lsa ScrollTriger orqali birdaniga tugashiga o'tamiz animatsiyani
+// if (window.scrollY >= 200) {
+ScrollTrigger.create({
+    trigger: '#banner',
+    start: 'top 100%',
+    end: 'bottom 50%',
+    toggleActions: "play complete none none",
+    animation: tl, // Animatsiyani ScrollTrigger bilan bog'lab olish
+    onEnter: () => {
+        cursor_1.style.display = 'none';
+        cursor_2.style.display = 'none';
+    }
+});
+// }
 
 
 tl.to('.banner-coment', {
