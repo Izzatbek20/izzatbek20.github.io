@@ -59,7 +59,7 @@ document.getElementById('contact').onsubmit = (e) => {
 
 document.addEventListener('DOMContentLoaded', function () {
     var splide = new Splide('.splide', {
-        type: 'loop',
+        // type: 'loop',
         gap: 10,
         width: '100%',
         perPage: 2,

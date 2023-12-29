@@ -62,7 +62,7 @@
                     <div class="cursor inline" id="cursor-2">|</div>
                 </h2>
                 <a href="#contact" id="banner-contact-btn"
-                    class="btn border relative z-50 py-5 px-5 inline-block hover:border-transparent hover:bg-white hover:text-black text-md sm:text-lg md:text-base lg:text-lg xl:text-xl">
+                    class="btn-hover btn border relative z-50 py-5 px-5 inline-block hover:border-transparent hover:bg-white hover:text-black text-md sm:text-lg md:text-base lg:text-lg xl:text-xl">
                     <span class="z-50">Men bilan bog'lanish</span>
                 </a>
                 </span>
@@ -141,20 +141,25 @@
         <!-- /Skillis -->
 
         <!-- Projects -->
-        <div id="#projects" class="text-white mt-32">
-            <h2 class="title text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl"># Loyihalar</h2>
-            <div class="flex md:flex-row lg:flex-row xl:flex-row 2xl:flex-row flex-col mb-10">
-                <div class="flex-1 mb-20">
-                    <div class="splide" role="group" aria-label="Splide Basic HTML Example">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                <li class="splide__slide cursor-pointer">
-                                    <img src="/images/projects/ideal/1.png">
-                                    <div>
-                                        <h2 class="splide-title">Ideal</h2>
-                                    </div>
-                                </li>
-                            </ul>
+        <div id="projects" class="text-white mt-32 h-screen flex items-center justify-center">
+            <div class="projects">
+                <h2 class="title text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">
+                    <div class="project_title inline-block"></div>
+                    <div class="cursor-coment inline" id="project-cursor">|</div>
+                </h2>
+                <div class="flex md:flex-row lg:flex-row xl:flex-row 2xl:flex-row flex-col mb-10">
+                    <div class="flex-1 mb-20">
+                        <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide cursor-pointer">
+                                        <img src="/images/projects/ideal/1.png">
+                                        <div>
+                                            <h2 class="splide-title">Ideal</h2>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -163,44 +168,51 @@
         <!-- /Projects -->
 
         <!-- Contact -->
-        <div id="#contact-component" class="text-white mt-32">
-            <h2 class="title text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl"># Aloqa</h2>
-            <div class="flex md:flex-row lg:flex-row xl:flex-row 2xl:flex-row flex-col mb-10">
-                <div class="flex-1 mb-20 md:pr-5 lg:pr-10 xl:pr-20">
-                    <h2 class="font-size mb-10 text-2xl leading-tight md:text-2xl lg:text-3xl xl:text-3xl">
-                        Menga xohlagan vaqtda va xohlagancha xabar bering va biz hamkorlikni boshlaymiz.
-                    </h2>
-                    <div class="mb-10">
-                        <h2 class="uppercase text-xl md:text-2xl lg:text-3xl xl:text-3xl">
-                            Telefon
+        <div id="contact" class="text-white mt-32 h-screen flex items-center justify-center">
+            <div>
+                <h2 class="title text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">
+                    <div class="contact_title inline-block"></div>
+                    <div class="cursor-coment inline" id="contact-cursor">|</div>
+                </h2>
+                <div class="flex md:flex-row lg:flex-row xl:flex-row 2xl:flex-row flex-col mb-10">
+                    <div class="flex-1 mb-20 md:pr-5 lg:pr-10 xl:pr-20 contact_text">
+                        <h2 class="font-size mb-10 text-2xl leading-tight md:text-2xl lg:text-3xl xl:text-3xl">
+                            Menga xohlagan vaqtda va xohlagancha xabar bering va biz hamkorlikni boshlaymiz.
                         </h2>
-                        <a href="tel:+998937278014" class="underline text-lg md:text-lg lg:text-xl xl:text-xl mt-5">
-                            +998 93 727 80 14
-                        </a>
-                    </div>
-                    <div class="mb-10">
-                        <h2 class="uppercase text-xl md:text-2xl lg:text-3xl xl:text-3xl">
-                            Elektron pochta
-                        </h2>
-                        <a href="mailto:izzatbekmajidov200020@gmail.com"
-                            class="underline text-lg md:text-lg lg:text-xl xl:text-xl mt-5">
-                            izzatbekmajidov200020@gmail.com
-                        </a>
-                    </div>
+                        <div class="mb-10">
+                            <h2 class="uppercase text-xl md:text-2xl lg:text-3xl xl:text-3xl">
+                                Telefon
+                            </h2>
+                            <a href="tel:+998937278014" class="underline text-lg md:text-lg lg:text-xl xl:text-xl mt-5">
+                                +998 93 727 80 14
+                            </a>
+                        </div>
+                        <div class="mb-10">
+                            <h2 class="uppercase text-xl md:text-2xl lg:text-3xl xl:text-3xl">
+                                Elektron pochta
+                            </h2>
+                            <a href="mailto:izzatbekmajidov200020@gmail.com"
+                                class="underline text-lg md:text-lg lg:text-xl xl:text-xl mt-5">
+                                izzatbekmajidov200020@gmail.com
+                            </a>
+                        </div>
 
-                </div>
-                <div class="flex-1">
-                    <span class="text-green-800 hidden" id="form-alert">Ma'lumotlaringiz yuborildi !!!</span>
-                    <form class="w-full" id="contact" method="POST">
-                        <input type="text" id="name" placeholder="Ism"
-                            class="w-full mb-5 bg-transparent border-b border-b-white outline-none py-3 text-xl">
-                        <input type="text" id="email" placeholder="Elektron pochta yoki telefon"
-                            class="w-full mb-5 bg-transparent border-b border-b-white outline-none py-3 text-xl">
-                        <textarea id="messsage" cols="30" rows="5" placeholder="Sizning xabaringiz"
-                            class="w-full mb-5 bg-transparent border-b border-b-white outline-none py-3 text-xl"></textarea>
-                        <button
-                            class="btn border py-2 px-5 mt-5 hover:border-transparent hover:bg-white hover:text-black text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">Yuborish</button>
-                    </form>
+                    </div>
+                    <div class="flex-1 contact_form">
+                        <span class="text-green-800 hidden" id="form-alert">Ma'lumotlaringiz yuborildi !!!</span>
+                        <form class="w-full" id="contact" method="POST">
+                            <input type="text" id="name" placeholder="Ism"
+                                class="w-full mb-5 bg-transparent border-b border-b-white outline-none py-3 text-xl">
+                            <input type="text" id="email" placeholder="Elektron pochta yoki telefon"
+                                class="w-full mb-5 bg-transparent border-b border-b-white outline-none py-3 text-xl">
+                            <textarea id="messsage" cols="30" rows="5" placeholder="Sizning xabaringiz"
+                                class="w-full mb-5 bg-transparent border-b border-b-white outline-none py-3 text-xl"></textarea>
+                            <button
+                                class="form-submit btn-hover btn border py-2 px-5 flex items-center mt-5 hover:border-transparent hover:bg-white hover:text-black text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">Yuborish
+                                <img src="/icons/telegram.svg" class="sended ml-2 h-8" alt="Telegram">
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

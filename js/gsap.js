@@ -177,16 +177,18 @@ function buttonHover(box, limit, interval) {
 // Banner burron hover
 let hoverTime;
 
-document.getElementById('banner-contact-btn').addEventListener('mouseover', function (e) {
-    let i = 1
-    hoverTime = setInterval(function () {
-        buttonHover(e.target, 10, i)
-        i++
-    }, 200);
-})
-document.getElementById('banner-contact-btn').addEventListener('mouseout', function () {
-    clearInterval(hoverTime)
-})
+document.querySelectorAll('.btn-hover').forEach(element => {
+    element.addEventListener('mouseover', function (e) {
+        let i = 1
+        hoverTime = setInterval(function () {
+            buttonHover(e.target, 10, i)
+            i++
+        }, 200);
+    })
+    element.addEventListener('mouseout', function () {
+        clearInterval(hoverTime)
+    })
+});
 
 // Random int
 function getRandomInt(min, max) {
@@ -244,3 +246,99 @@ gsap.from('.resume-dowbload', {
         end: 'bottom 50%',
     }
 })
+
+// Project
+
+gsap.to('.project_title', {
+    duration: 1,
+    text: "# Loyihalar",
+    scrollTrigger: {
+        trigger: '.project_title',
+        start: 'top 80%',
+        end: 'bottom 50%',
+    },
+    onComplete: () => {
+        // .4s kursorni yashiradi
+        setTimeout(() => {
+            document.getElementById('project-cursor').style.display = 'none';
+        }, 400)
+    }
+})
+
+gsap.from('.projects', {
+    // x: '100vw',
+    opacity: 0,
+    duration: 5,
+    scrollTrigger: {
+        trigger: '.projects',
+        start: 'top 80%',
+        end: 'bottom 50%',
+    }
+})
+
+// Loyiha 
+gsap.to('.contact_title', {
+    duration: 1,
+    text: "# Aloqa",
+    scrollTrigger: {
+        trigger: '.contact_title',
+        start: 'top 80%',
+        end: 'bottom 50%',
+    },
+    onComplete: () => {
+        // .4s kursorni yashiradi
+        setTimeout(() => {
+            document.getElementById('contact-cursor').style.display = 'none';
+        }, 400)
+    }
+})
+
+gsap.from('.contact_text', {
+    y: '-20vh',
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.contact_text',
+        start: 'top 80%',
+        end: 'bottom 50%',
+    }
+})
+gsap.from('.contact_form', {
+    y: '20vh',
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.contact_form',
+        start: 'top 80%',
+        end: 'bottom 50%',
+    }
+})
+
+// let click_count = 0
+// document.querySelector('.form-submit').addEventListener('click', (e) => {
+//     let tl_submit_btn = gsap.timeline();
+//     if (click_count != 0) {
+//         tl_submit_btn.restart()
+//     }
+//     tl_submit_btn.to(".sended", {
+//         motionPath: {
+//             path: [{
+//                 x: 0,
+//                 y: 0
+//             }, {
+//                 x: `${document.querySelector('.contact_form').offsetWidth}`,
+//                 y: 0
+//             }],
+//             autoRotate: 50
+//         },
+//         duration: 1,
+//         ease: "power1.out",
+//         // opacity:
+//     });
+//     tl_submit_btn.to(".sended", {
+//         delay: 0.5,
+//         duration: 0.5,
+//         opacity: 0
+//     });
+
+// })
