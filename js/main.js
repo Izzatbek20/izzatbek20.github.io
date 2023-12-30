@@ -87,3 +87,47 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     splide.mount(window.splide.Extensions);
 });
+
+// const robot = document.querySelector('.robot')
+
+
+// const heart = [
+//     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+//     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+//     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+//     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+//     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+//     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+//     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+//     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+//     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+//     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+// ]
+
+// heart.forEach((value, index) => {
+//     const box = document.createElement('div')
+//     box.classList.add('robot-box', 'w-10', 'h-10', 'border', 'text-white')
+//     box.setAttribute('data-index', index)
+//     if (value == 1) {
+//         box.classList.add('bg-white')
+//     }
+//     robot.appendChild(box)
+// });
+
+// document.querySelectorAll('.robot-box').forEach((e) => {
+//     e.addEventListener('click', (e) => {
+//         const index = e.target.getAttribute('data-index')
+//         if (heart[index] == 0) {
+//             e.target.classList.add('bg-white')
+//             heart[index] = 1;
+//         } else {
+//             e.target.classList.remove('bg-white')
+//             heart[index] = 0;
+//         }
+//         let textValue = ''
+//         heart.forEach(element => {
+//             textValue += element + ',';
+//         });
+//         console.log(textValue);
+//     })
+// })

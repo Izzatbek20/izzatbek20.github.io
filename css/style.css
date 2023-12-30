@@ -196,3 +196,15 @@ html {
     /* left: -2.5rem; */
     left: -3rem;
 }
+
+.robot {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+}
+
+.robot .robot-box {
+    border: 1px solid rgba(0, 0, 0, 0.696);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 4px;
+}
