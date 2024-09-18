@@ -260,8 +260,19 @@
                 },
                 error: function (xhr) {
                     $('button').prop('disabled', false);
-                    $('#btn_status').text('Server error' + xhr.error).addClass('err').show();
-                    alert('Server error');
+                    let errorMessage = 'Server error: ' + (xhr.status ? xhr.status + ' ' + xhr.statusText : 'Unknown error');
+                    if (xhr.responseText) {
+                        try {
+                            let jsonResponse = JSON.parse(xhr.responseText);
+                            if (jsonResponse.message) {
+                                errorMessage += ' - ' + jsonResponse.message;
+                            }
+                        } catch (e) {
+                            errorMessage += ' - ' + xhr.responseText;
+                        }
+                    }
+                    $('#btn_status').text(errorMessage).addClass('err').show();
+                    alert(errorMessage);
                 }
             });
         }
