@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://imm20.uz/sitemap.xml
