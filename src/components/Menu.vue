@@ -54,7 +54,7 @@ function menuClose() {
 
         <!-- Logo -->
         <router-link to="/" class="mb-8">
-          <span class="text-2xl font-bold text-white">IMM<span class="text-gray-400">.UZ</span></span>
+          <span class="text-2xl font-bold text-white">IMM20<span class="text-gray-400">.UZ</span></span>
         </router-link>
 
         <hr class="border-gray-700 mb-8" />

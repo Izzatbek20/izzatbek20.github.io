@@ -64,7 +64,7 @@
     </div>
     <div class="text-2xl mt-5 flex flex-col justify-start gap-8">
       <p class="max-sm:text-sm">
-        Menin ismim Izzatbek. 4 yillik tajribaga ega Full-stack dasturchiman, lekin ko‘proq backend tomonida
+        Mening ismim Izzatbek. 4 yillik tajribaga ega Full-stack dasturchiman, lekin ko‘proq backend tomonida
         ishlashni
         yoqtiraman. Bu davr mobaynida PHP asosida bir qator texnologiyalar bilan ishlaganman: dastlab sof PHP,
         keyinchalik

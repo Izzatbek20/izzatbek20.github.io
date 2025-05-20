@@ -5,7 +5,7 @@ import Menu from '@/components/Menu.vue';
   <nav class="basis-1/12">
     <div class="container-imm h-16 text-white  flex items-center justify-between">
       <router-link to="/" class="text-white text-lg font-bold">
-        IMM<span class="text-gray-500">.UZ</span>
+        IMM20<span class="text-gray-500">.UZ</span>
       </router-link>
 
       <!-- Menu -->
