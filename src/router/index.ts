@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
-import EmuView from '@/views/projects/EmuView.vue'
-import IdealView from '@/views/projects/IdealView.vue'
-import PcccrmView from '@/views/projects/PcccrmView.vue'
+import ProjectsView from '@/views/ProjectsView.vue'
+import ProjectView from '@/views/ProjectView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,19 +12,14 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/emu',
-      name: 'emu',
-      component: EmuView,
+      path: '/loyihalar',
+      name: 'projects',
+      component: ProjectsView,
     },
     {
-      path: '/ideal',
-      name: 'ideal',
-      component: IdealView,
-    },
-    {
-      path: '/pcccrm',
-      name: 'pcccrm',
-      component: PcccrmView,
+      path: '/loyiha/:slug',
+      name: 'project',
+      component: ProjectView,
     },
   ],
 })

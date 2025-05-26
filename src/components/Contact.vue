@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
+const age = ref(new Date().getFullYear() - 2000);
+</script>
 <template>
   <section id="aloqa-malumotlarim"
     class="text-white container-imm py-14 md:py-20 flex flex-col justify-center gap-5 line-bottom">
@@ -11,7 +15,7 @@
       <div class="flex-1/2 flex flex-col justify-center gap-10">
         <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold">Loyihangiz haqida gaplashamizmi? Xabar yuboring!</h3>
         <ul class="flex flex-col gap-2 text-gray-500 max-md:text-sm">
-          <li>Yoshim - <span x-text="age"></span></li>
+          <li>Yoshim - <span>{{ age }}</span></li>
           <li>Manzil - Farg'ona viloyat, Toshloq tumani</li>
           <li>Telefon - 998 90 833 06 20</li>
         </ul>
