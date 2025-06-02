@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import FooterComponent from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 
 import { useSeoMeta, useHead } from '@vueuse/head';
 import { useProjectStore } from '@/stores/projects';
+
 const pageTitle = 'Izzatbek – Full-stack Dasturchi | Portfolio';
 const pageDescription = '4 yillik tajribaga ega full-stack mutaxassisi. REST API, ma’lumotlar bazasi, va Tailwind CSS yordamida ishonchli web yechimlar yarataman.';
 const pageKeyword = 'Laravel dasturchi, PHP backend developer, REST API yaratish, Full-stack dasturchi, Tailwind CSS, Vue.js frontend, MySQL mutaxassisi, FastAPI Python, backend xizmatlar, web dasturchi, Telegram bot ishlab chiqish, ma’lumotlar bazasi loyihalash, dasturchi, Izzatbek';
@@ -12,12 +13,12 @@ const canonical = window.location.href;
 const LogoImage = `${window.location.origin}/logo.webp`; // Tashqi URL bo'lishi kerak
 const domain = window.location.origin;
 
-const projects = useProjectStore();
+const useProjectStoreData = useProjectStore();
 
 const tag = ref('veb-sayt'); // Default tag
 
-const data = computed(() => {
-  return projects.data.filter(project => project.tag === tag.value);
+const projects = computed(() => {
+  return useProjectStoreData.data.filter(project => project.tag === tag.value);
 });
 
 const capitalize = computed(() => {
@@ -37,6 +38,10 @@ interface Tabs {
 
 // Tab holatini boshqarish uchun ref
 const activeTab = ref<Tabs>({ name: 'veb-sayt' });
+
+onMounted(() => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 // SEO meta teglar
 useSeoMeta({
@@ -129,7 +134,7 @@ useHead({
     <div class="text-2xl grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 py-10">
 
 
-      <div v-for="(project, i) in data" :key="i"
+      <div v-for="(project, i) in projects" :key="i"
         class="relative flex flex-col justify-between bg-[#0b0d13] shadow-sm border border-[#0b0d13] rounded-lg">
         <div>
           <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">

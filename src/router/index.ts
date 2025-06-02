@@ -22,6 +22,16 @@ const router = createRouter({
       component: ProjectView,
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    // Agar saqlangan pozitsiya mavjud bo'lsa, uni qaytaradi.
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return {
+        top: 0,
+      }
+    }
+  },
 })
 
 export default router

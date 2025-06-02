@@ -43,6 +43,7 @@ const skills = [
     category: "Ma'lumotlar bazasi",
     items: [
       { name: "Mysql", icon: Mysql, url: "https://www.mysql.com" },
+      { name: "PostgreSQL", icon: Mysql, url: "https://www.postgresql.org" },
     ],
   },
   {

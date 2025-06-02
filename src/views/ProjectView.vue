@@ -8,6 +8,7 @@ import RightUpArrow from '@/components/icons/RightUpArrow.vue'
 
 import { useProjectStore } from '@/stores/projects';
 import { useRoute } from 'vue-router';
+import { onMounted } from 'vue';
 
 const route = useRoute();
 const projectStore = useProjectStore();
@@ -16,6 +17,10 @@ const data = projectStore.data.find(project => project.slug == route.params.slug
 if (!data) {
   throw new Error('Project data not found');
 }
+
+onMounted(() => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 </script>
 <template>

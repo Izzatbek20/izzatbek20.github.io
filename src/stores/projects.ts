@@ -466,5 +466,10 @@ export const useProjectStore = defineStore('projects', () => {
     },
   ])
 
-  return { data }
+  // data ni to'g'ridan-to'g'ri slice qilmaslik uchun yangi massivdan nusxa olinadi
+  const favoriteProjects = computed(() => {
+    return [...data.value].slice(0, 3)
+  })
+
+  return { data, favoriteProjects }
 })

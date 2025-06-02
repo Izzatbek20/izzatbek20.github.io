@@ -1,6 +1,64 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '@/utils/firebase';
+import axios from 'axios';
+
 const age = ref(new Date().getFullYear() - 2000);
+
+const name = ref('');
+const email = ref('');
+const message = ref('');
+const loading = ref(false);  // Loading holati
+
+const submitForm = async () => {
+  loading.value = true; // spinnerni yoqamiz
+
+  if (!name.value || !email.value || !message.value) {
+    alert("Iltimos, barcha maydonlarni to'ldiring.");
+    loading.value = false; // spinnerni o'chiramiz
+    return;
+  }
+  try {
+    await addDoc(collection(db, 'customers'), {
+      name: name.value,
+      email: email.value,
+      message: message.value,
+      created_at: new Date(),
+    });
+
+
+    try {
+      await axios.post(`https://api.telegram.org/bot6523006688:AAFnDIMUluEviarTjo7yoLmhabLzMTvLzN0/sendMessage`, {
+        chat_id: 1733819468,
+        text: `
+#Yangi forma:
+
+👤 Ism: ${name.value}
+📧 Email: ${email.value}
+💬 Xabar: ${message.value}
+🕒 Vaqt: ${new Date().toLocaleString()}
+    `,
+      });
+    } catch (err) {
+      if (err instanceof Error) {
+        console.error("Telegramga yuborib bo‘lmadi:", err.message);
+      } else {
+        console.error("Telegramga yuborib bo‘lmadi:", err);
+      }
+    }
+    alert("Yuborildi!");
+    name.value = email.value = message.value = '';
+  } catch (error) {
+    if (error instanceof Error) {
+      alert("Xatolik yuz berdi: " + error.message);
+    } else {
+      alert("Xatolik yuz berdi: " + String(error));
+    }
+  } finally {
+    loading.value = false; // spinnerni o'chiramiz
+  }
+};
 </script>
 <template>
   <section id="aloqa-malumotlarim"
@@ -80,15 +138,33 @@ const age = ref(new Date().getFullYear() - 2000);
         </ul>
       </div>
       <div class="flex-1/2">
-        <form class="border border-[#45454533] rounded-2xl p-10 bg-hero-patterns shadow-lg">
-          <input type="text" id="name" placeholder="Ism"
-            class="w-full mb-5 bg-transparent border-b border-b-gray-400 outline-none py-1.5 md:py-3 text-md md:text-xl">
-          <input type="text" id="email" placeholder="Elektron pochta yoki telefon"
-            class="w-full mb-5 bg-transparent border-b border-b-gray-400 outline-none py-1.5 md:py-3 text-md md:text-xl">
-          <textarea id="messsage" cols="30" rows="5" placeholder="Sizning xabaringiz"
-            class="w-full mb-5 bg-transparent border-b border-b-gray-400 outline-none py-1.5 md:py-3 text-md md:text-xl"></textarea>
+        <form @submit.prevent="submitForm"
+          class="border border-[#45454533] rounded-2xl p-10 bg-hero-patterns shadow-lg relative">
+
+          <!-- INPUTLAR -->
+          <input v-model="name" type="text" id="name" placeholder="Ism"
+            class="w-full mb-5 bg-transparent border-b border-b-gray-400 outline-none py-1.5 md:py-3 text-md md:text-xl"
+            :disabled="loading">
+          <input v-model="email" type="text" id="email" placeholder="Elektron pochta yoki telefon"
+            class="w-full mb-5 bg-transparent border-b border-b-gray-400 outline-none py-1.5 md:py-3 text-md md:text-xl"
+            :disabled="loading">
+          <textarea v-model="message" id="messsage" cols="30" rows="5" placeholder="Sizning xabaringiz"
+            class="w-full mb-5 bg-transparent border-b border-b-gray-400 outline-none py-1.5 md:py-3 text-md md:text-xl"
+            :disabled="loading"></textarea>
+
+          <!-- BUTTON -->
           <button
-            class="btn-hover btn border rounded-full cursor-pointer py-2 px-5 flex items-center mt-5 hover:border-transparent hover:bg-white hover:text-black text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl">Yuborish
+            class="btn-hover btn border rounded-full cursor-pointer py-2 px-5 flex items-center mt-5 hover:border-transparent hover:bg-white hover:text-black text-sm sm:text-lg md:text-base lg:text-lg xl:text-xl"
+            :disabled="loading">
+            <span v-if="!loading">Yuborish</span>
+
+            <!-- Spinner: oddiy CSS spinner -->
+            <svg v-else class="animate-spin h-5 w-5 text-white mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z">
+              </path>
+            </svg>
           </button>
         </form>
       </div>

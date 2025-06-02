@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { useProjectStore } from '@/stores/projects';
 import RightUpArrow from './icons/RightUpArrow.vue';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
 const projectStore = useProjectStore();
-
-const data = projectStore.data.splice(0, 3)
 
 const capitalize = computed(() => {
   return (str: string) => {
@@ -25,7 +23,7 @@ const capitalize = computed(() => {
     </div>
     <div class="text-2xl flex flex-col justify-center gap-10 py-10">
 
-      <div v-for="(project, i) in data" :key="i" class="flex flex-col lg:flex-row gap-8"
+      <div v-for="(project, i) in projectStore.favoriteProjects" :key="i" class="flex flex-col lg:flex-row gap-8"
         :class="i % 2 === 0 ? '' : 'lg:flex-row-reverse'">
         <div class="flex-1/2 flex justify-center items-center">
           <img class="size-[20rem] md:size-[33rem] rounded-2xl object-cover" :src="project.images[0]"
