@@ -15,6 +15,7 @@ import VueJs from '@/components/icons/skills/VueJs.vue';
 import Jquery from '@/components/icons/skills/Jquery.vue';
 import Yii2 from '@/components/icons/skills/Yii2.vue';
 import RightUpArrow from '@/components/icons/RightUpArrow.vue';
+import PostgreSql from './icons/skills/PostgreSql.vue';
 
 const skills = [
   {
@@ -43,7 +44,7 @@ const skills = [
     category: "Ma'lumotlar bazasi",
     items: [
       { name: "Mysql", icon: Mysql, url: "https://www.mysql.com" },
-      { name: "PostgreSQL", icon: Mysql, url: "https://www.postgresql.org" },
+      { name: "PostgreSQL", icon: PostgreSql, url: "https://www.postgresql.org" },
     ],
   },
   {
