@@ -13,8 +13,8 @@ import Navbar from '@/components/Navbar.vue';
         <h4 class="text-md md:text-xl font-bold text-white">Salom! Men Izzatbekman.</h4>
         <h1
           class="text-6xl leading-12 sm:text-7xl sm:leading-16 md:text-7xl md:leading-20 lg:text-8xl lg:leading-24 2xl:text-9xl 2xl:leading-34 font-bold text-white">
-          Full-stack dasturchi<template class="max-[480px]:block hidden"><br></template>man.<br>
-          Maqsadim <span class="text-gray-500">soddalik va ishonch<template
+          Backend dasturchi<template class="max-[480px]:block hidden"><br></template>man.<br>
+          Maqsadim kend<span class="text-gray-500">soddalik va ishonch<template
               class="max-[480px]:block hidden"><br></template>lilik</span>
         </h1>
       </div>
