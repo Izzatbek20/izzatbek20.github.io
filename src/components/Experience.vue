@@ -9,7 +9,7 @@
 
       <div class="row-span-1 md:col-span-2">
         <span class="text-xs md:text-sm text-gray-500">2021 - 2025</span>
-        <h3 class="text-3xl md:text-5xl mt-2.5 md:mt-5 font-bold">Crud group</h3>
+        <h3 class="text-3xl md:text-5xl mt-2.5 md:mt-5 font-bold">CRUD Developer</h3>
         <span class="text-md md:text-lg text-gray-500">Full-stack dasturchi</span>
       </div>
       <div class="row-span-2 md:col-span-3 max-sm:text-sm">
@@ -22,6 +22,28 @@
           ularni
           yaratishda
           faol ishtirok etdim.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="text-2xl grid grid-rows-3 md:grid-cols-5 grid-cols-1 md:grid-rows-1 gap-8 py-10">
+
+      <div class="row-span-1 md:col-span-2">
+        <span class="text-xs md:text-sm text-gray-500">2025 - hozir</span>
+        <h3 class="text-3xl md:text-5xl mt-2.5 md:mt-5 font-bold">WELL TECH</h3>
+        <span class="text-md md:text-lg text-gray-500">Full-stack dasturchi</span>
+      </div>
+      <div class="row-span-2 md:col-span-3 max-sm:text-sm">
+        <h4>
+          Hozirda kompaniyaning asosiy yo'nalishidagi yirik loyihalarni rivojlantirish va ularni yuqori yuklamalarga
+          moslashtirish (scaling) ustida ishlamoqdaman.
+          Asosiy loyiha: Vion — Ta’lim platformasini optimallashtirish va rivojlantirish
+        </h4>
+        <br>
+        <p class="line-bottom pb-10">
+          Loyiha o'quv markazlari faoliyatini to'liq avtomatlashtirishga qaratilgan. Mening asosiy vazifam tizimning
+          barqarorligini ta'minlash va foydalanuvchi tajribasini (UX) yaxshilashdan iborat.
         </p>
       </div>
 

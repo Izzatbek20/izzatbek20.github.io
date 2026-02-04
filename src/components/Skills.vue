@@ -44,7 +44,6 @@ const skills = [
     category: "Ma'lumotlar bazasi",
     items: [
       { name: "Mysql", icon: Mysql, url: "https://www.mysql.com" },
-      { name: "PostgreSQL", icon: PostgreSql, url: "https://www.postgresql.org" },
     ],
   },
   {
@@ -59,6 +58,13 @@ const skills = [
     items: [
       { name: "Aiogram", icon: null, url: "https://aiogram.dev" },
       { name: "Telethon", icon: null, url: "https://docs.telethon.dev" },
+    ],
+  },
+  {
+    category: "Hozir o‘rganyapman",
+    items: [
+      { name: "Go", icon: null, url: "https://go.dev" },
+      { name: "PostgreSQL", icon: PostgreSql, url: "https://www.postgresql.org" },
     ],
   },
 ];

@@ -14,7 +14,7 @@ import Navbar from '@/components/Navbar.vue';
         <h1
           class="text-6xl leading-12 sm:text-7xl sm:leading-16 md:text-7xl md:leading-20 lg:text-8xl lg:leading-24 2xl:text-9xl 2xl:leading-34 font-bold text-white">
           Backend dasturchi<template class="max-[480px]:block hidden"><br></template>man.<br>
-          Maqsadim kend<span class="text-gray-500">soddalik va ishonch<template
+          Maqsadim <span class="text-gray-500">soddalik va ishonch<template
               class="max-[480px]:block hidden"><br></template>lilik</span>
         </h1>
       </div>

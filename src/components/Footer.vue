@@ -8,7 +8,7 @@
 
       <ul class="flex justify-center items-center mt-10 gap-10">
         <li>
-          <a aria-label="Telegram" href="http://t.me/i200020" target="_blank" rel="noopener noreferrer">
+          <a aria-label="Telegram" href="http://t.me/imm0620" target="_blank" rel="noopener noreferrer">
             <svg class="size-8 md:size-10 text-gray-500" fill="currentColor" role="img" viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg">
               <title>Telegram</title>

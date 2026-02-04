@@ -29,7 +29,7 @@ const submitForm = async () => {
 
 
     try {
-      await axios.post(`https://api.telegram.org/bot6523006688:AAFnDIMUluEviarTjo7yoLmhabLzMTvLzN0/sendMessage`, {
+      await axios.post(`https://api.telegram.org/bot8024408654:AAFb97a8pANjTdVKqPvDO9UK5FxoNkymumw/sendMessage`, {
         chat_id: 1733819468,
         text: `
 #Yangi forma:
@@ -80,7 +80,7 @@ const submitForm = async () => {
 
         <ul class="flex justify-start items-center  gap-5">
           <li class="border border-gray-500 rounded-full p-2">
-            <a aria-label="Telegram" href="http://t.me/i200020" target="_blank" rel="noopener noreferrer">
+            <a aria-label="Telegram" href="http://t.me/imm0620" target="_blank" rel="noopener noreferrer">
               <svg class="size-4 text-gray-500" fill="currentColor" role="img" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
                 <title>Telegram</title>

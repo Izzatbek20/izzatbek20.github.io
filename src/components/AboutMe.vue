@@ -103,7 +103,7 @@
         yondashaman.
       </p>
 
-      <a aria-label="Resumeni yuklab olish" href="/resume.pdf" download
+      <a aria-label="Resumeni yuklab olish" href="/CV-Izzatbek.pdf" download
         class="group underline transition-colors hover:text-zinc-800 flex items-center gap-2 text-gray-500">
         <svg class="size-4 md:size-6 text-gray-500 group-hover:text-zinc-800" viewBox="0 0 24 24" fill="currentColor"
           xmlns="http://www.w3.org/2000/svg">

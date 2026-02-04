@@ -23,6 +23,49 @@ export const useProjectStore = defineStore('projects', () => {
   const data = ref([
     {
       tag: 'veb-sayt',
+      slug: 'vion',
+      titleHtml: `
+  <span class="text-gray-500">Zamonaviy Learning Management System (LMS) </span> - Onlayn Ta'lim Platformasi!
+`,
+      title: `Zamonaviy Learning Management System (LMS) - Onlayn Ta'lim Platformasi`,
+      description: `Ushbu loyiha o'qituvchilar va o'quv markazlari uchun o'z kurslarini onlayn tarzda sotish va ta'lim jarayonini to'liq raqamlashtirish maqsadida ishlab
+      chiqilgan. Tizim video darslar, jonli efirlar, topshiriqlar va talabalar bilimini baholash kabi barcha zarur vositalarni o'z ichiga oladi.`,
+      features: [
+        'Kurslar, darslar va topshiriqlarni boshqarishning mukammal tizimi',
+        "Uzum, Payme va Click kabi to'lov tizimlari integratsiyasi",
+        "Talabalar, o'qituvchilar va administratorlar uchun alohida va qulay panellar",
+        "Forum va blog tizimi orqali foydalanuvchilar o'rtasida muloqot o'rnatish",
+        "Ko'p tillilikni qo'llab-quvvatlash va moslashuvchan (responsive) dizayn",
+      ],
+      technologies: [
+        { name: 'Html5', icon: markRaw(Html5), url: 'https://html.spec.whatwg.org' },
+        { name: 'Css', icon: markRaw(Css), url: 'https://www.w3.org/Style/CSS' },
+        { name: 'Javascript', icon: markRaw(Javascript), url: 'https://tc39.es/ecma262' },
+        { name: 'Jquery', icon: markRaw(Jquery), url: 'https://jquery.com' },
+        { name: 'PHP', icon: markRaw(Php), url: 'https://www.php.net' },
+        { name: 'Laravel', icon: markRaw(Laravel), url: 'https://laravel.com' },
+        { name: 'Mysql', icon: markRaw(Mysql), url: 'https://www.mysql.com' },
+      ],
+      roles: {
+        description:
+          "WELL TECH jamoasida ushbu loyihani texnik takomillashtirish va optimallashtirishga mas'ul bo'ldim. Asosiy e'tibor tizim samaradorligini oshirish va yangi biznes talablariga moslashtirishga qaratildi.",
+        items: [
+          "Ma'lumotlar bazasi so'rovlarini optimallashtirish va Redis orqali kesh-tizimini joriy qilish",
+          'FFmpeg yordamida video resurslarni qayta ishlash modullarini ishlab chiqish',
+          'Tizimdagi mavjud xatoliklarni (bugs) bartaraf etish va kod bazasini refaktoring qilish',
+          "O'quv markazlarining maxsus talablari asosida yangi funksional modullarni qo'shish",
+        ],
+      },
+      status: 'Loyiha faol rivojlantirilmoqda va optimallashtirish bosqichida.',
+      images: [
+        '/project-images/vion/home.png',
+        '/project-images/vion/admin.png',
+        '/project-images/vion/course.png',
+        '/project-images/vion/student.png',
+      ],
+    },
+    {
+      tag: 'veb-sayt',
       slug: 'ideal',
       titleHtml: `
   <span class="text-gray-500">Kostyum-shim korxonasi uchun </span> buyurtma boshqaruv tizimi!
