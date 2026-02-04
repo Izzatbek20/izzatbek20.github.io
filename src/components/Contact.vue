@@ -30,7 +30,7 @@ const submitForm = async () => {
 
     try {
       await axios.post(`https://api.telegram.org/bot8024408654:AAFb97a8pANjTdVKqPvDO9UK5FxoNkymumw/sendMessage`, {
-        chat_id: 1733819468,
+        chat_id: 7774634519,
         text: `
 #Yangi forma:
 
